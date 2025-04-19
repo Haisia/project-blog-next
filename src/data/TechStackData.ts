@@ -15,7 +15,7 @@ export const learning: TechStackProps[] = [
   {content: 'RabbitMQ', src: `${techStackIconBaseUrl}rabbitMQ.svg`},
   {content: 'PostgreSQL', src: `${techStackIconBaseUrl}postgresql.svg`},
   {content: 'MongoDB', src: `${techStackIconBaseUrl}mongodb.svg`},
-  {content: 'React.js', src: `${techStackIconBaseUrl}reactjs.svg`},
+  {content: 'React', src: `${techStackIconBaseUrl}reactjs.svg`},
   {content: 'Next.js', src: `${techStackIconBaseUrl}nextjs.svg`},
   {content: 'TailwindCSS', src: `${techStackIconBaseUrl}tailwind.svg`},
 ]

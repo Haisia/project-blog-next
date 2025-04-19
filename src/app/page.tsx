@@ -25,7 +25,7 @@ const ProfileImage = () => {
   return (
     <div className="relative w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden">
       <Image
-        src="/icons/myprofile_ghibli.png"
+        src="/icons/myprofile-ghibli.png"
         alt="MyProfile image"
         className="object-cover"
         fill

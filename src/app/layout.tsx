@@ -1,9 +1,8 @@
 import type {Metadata} from "next";
 import "./globals.css";
-import SearchBar from "@/components/SearchBar";
-import Link from "next/link";
 import {ReactNode} from "react";
-import Image from "next/image";
+import Header from "@/app/header";
+import Footer from "@/app/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,25 +26,6 @@ export default function RootLayout(
   );
 }
 
-const Header = () => {
-  return (
-    <header className="border-b border-gray-500/30 flex items-center py-3 px-80 justify-between h-15">
-      <div className="font-bold flex items-center gap-2">
-        <div className="relative w-10 h-10 rounded-full overflow-hidden">
-          <Image
-            src="/icons/myprofile_ghibli.png"
-            alt="MyProfile image"
-            className="object-cover"
-            fill
-          />
-        </div>
-        <Link href="/">Haisia&#39;s blog</Link>
-      </div>
-      <SearchBar/>
-    </header>
-  );
-};
-
 const Main = ({children}: { children: ReactNode }) => {
   return (
     <>
@@ -56,52 +36,3 @@ const Main = ({children}: { children: ReactNode }) => {
   )
 }
 
-const Footer = () => {
-  return (
-    <footer className="p-80 py-10 text-sm text-gray-400 space-y-4">
-      <ViewOnGitHub/>
-      <ProjectInfo/>
-    </footer>
-  );
-};
-
-const ViewOnGitHub = () => {
-  return (
-    <a
-      className="border border-gray-500/30 rounded-md inline-flex items-center gap-2 px-3 py-2 hover:border-white transition-colors"
-      href="https://github.com/Haisia/project-blog-next"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <div className="relative w-5 h-5">
-        <Image
-          src="/icons/commit.svg"
-          alt="View on GitHub"
-          fill
-          className="object-contain"
-        />
-      </div>
-      <span>View on GitHub</span>
-    </a>
-  );
-};
-
-const ProjectInfo = () => {
-  return (
-    <>
-      <div>
-        © 2025 <span className="text-white font-semibold">Haisia</span>. All rights reserved.
-      </div>
-      <div>
-        Built with
-        <span className="ml-1 text-white font-medium">
-          Next.js with TS · Spring Boot · JPA · PostgreSQL · Tailwind CSS
-        </span>
-      </div>
-      <div>
-        Contact: <a href="mailto:haisiaj.dev@gmail.com"
-                    className="underline hover:text-white">cwnsgur13579@gmail.com</a>
-      </div>
-    </>
-  )
-}
