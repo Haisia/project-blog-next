@@ -95,7 +95,7 @@ const ProjectInfo = () => {
       <div>
         Built with
         <span className="ml-1 text-white font-medium">
-          Next.js · Spring Boot · JPA · PostgreSQL
+          Next.js with TS · Spring Boot · JPA · PostgreSQL · Tailwind CSS
         </span>
       </div>
       <div>
