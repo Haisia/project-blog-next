@@ -5,4 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@theme { --color-myblack: #1d1d1d; }
+@theme {
+  --color-myblack: #1d1d1d;
+  --color-mypurple-100: #a29bfe;
+}
