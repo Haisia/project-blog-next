@@ -19,7 +19,7 @@ const Layout = async (
 
   return (
     <div className={"px-8 py-8"}>
-      <Breadcrumbs contents={[{content: group, link: groupLink}, {content: articles.title, link: `${groupLink}/${id}`}]}/>
+      <Breadcrumbs contents={[{content: group, link: groupLink}, {content: articles[0].title, link: `${groupLink}/${id}`}]}/>
       <div>{children}</div>
     </div>
   );
