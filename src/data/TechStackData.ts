@@ -17,5 +17,6 @@ export const learning: TechStackProps[] = [
   {content: 'MongoDB', src: `${techStackIconBaseUrl}mongodb.svg`},
   {content: 'React', src: `${techStackIconBaseUrl}reactjs.svg`},
   {content: 'Next.js', src: `${techStackIconBaseUrl}nextjs.svg`},
+  {content: 'Typescript', src: `${techStackIconBaseUrl}typescript.svg`},
   {content: 'TailwindCSS', src: `${techStackIconBaseUrl}tailwind.svg`},
 ]
