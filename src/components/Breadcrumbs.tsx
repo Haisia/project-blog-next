@@ -8,7 +8,7 @@ const Breadcrumbs = ({ contents }: BreadcrumbsProps) => {
   const joinedBreadcrumbs = contents.join(" > ");
 
   return (
-    <div>{joinedBreadcrumbs}</div>
+    <div className={"text-[12px] text-gray-500/80"}>{joinedBreadcrumbs}</div>
   );
 };
 
