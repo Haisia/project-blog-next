@@ -3,6 +3,7 @@ import "./globals.css";
 import {ReactNode} from "react";
 import Header from "@/app/header";
 import Footer from "@/app/footer";
+import Navbar from "@/app/navigation";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +20,10 @@ export default function RootLayout(
     <html lang="en">
       <body className={"bg-myblack text-white min-h-screen flex flex-col"}>
         <Header/>
-        <Main>{children}</Main>
+        <div className={"flex"}>
+          <Navbar/>
+          <Main>{children}</Main>
+        </div>
         <Footer/>
       </body>
     </html>

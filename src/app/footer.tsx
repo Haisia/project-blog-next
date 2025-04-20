@@ -39,7 +39,7 @@ const ProjectInfo = () => {
       <div>
         Built with
         <span className="ml-1 text-white font-medium">
-          Next.js with TS · Spring Boot · JPA · PostgreSQL · Tailwind CSS
+          Next.js with TS · Spring Boot · JPA · OracleDatabase · Tailwind CSS
         </span>
       </div>
       <div>
