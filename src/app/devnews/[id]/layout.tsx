@@ -1,6 +1,6 @@
 import React, {ReactNode} from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import {fetchMarkdown} from "@/utils/fetchMarkdown";
+import matter from "gray-matter";
 
 const group = "Dev News";
 const groupLink = "/devnews";
@@ -15,11 +15,12 @@ const Layout = async (
   }>) => {
 
   const { id } = await params;
-  const {title} = await fetchMarkdown(`http://localhost:8080/api/blog/devnews/${id}`);
+  const response = await fetch(`http://localhost:8080/api/blog/devnews/${id}`);
+  const {articles} = await response.json();
 
   return (
     <div className={"px-8 py-8"}>
-      <Breadcrumbs contents={[{content: group, link: groupLink}, {content: title, link: `${groupLink}/${id}`}]}/>
+      <Breadcrumbs contents={[{content: group, link: groupLink}, {content: articles.title, link: `${groupLink}/${id}`}]}/>
       <div>{children}</div>
     </div>
   );
