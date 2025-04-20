@@ -1,14 +1,27 @@
 import React from 'react';
+import Link from "next/link";
 
-type BreadcrumbsProps = {
-  contents: string[];
-};
+interface Breadcrumb {
+  content: string;
+  link: string;
+}
 
-const Breadcrumbs = ({ contents }: BreadcrumbsProps) => {
-  const joinedBreadcrumbs = contents.join(" > ");
+interface BreadcrumbsProps {
+  contents: Breadcrumb[];
+}
 
+const Breadcrumbs = ({contents}: BreadcrumbsProps) => {
   return (
-    <div className={"text-[12px] text-gray-500/80"}>{joinedBreadcrumbs}</div>
+    <>
+      <div className={"text-[12px] text-gray-500/80"}>
+        {contents.map((content, index) => (
+          <span key={content.link}>
+            <Link href={content.link}>{content.content}</Link>
+            {index < contents.length - 1 && <span> {'>'} </span>}
+          </span>
+        ))}
+      </div>
+    </>
   );
 };
 
