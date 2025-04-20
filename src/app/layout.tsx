@@ -22,7 +22,7 @@ export default function RootLayout(
         <Header/>
 
         {/* 콘텐츠 영역 (Sidebar + Main) */}
-        <div className="flex items-stretch">
+        <div className="flex items-stretch min-h-[500px]">
           <Navbar/> {/* ← 사이드 네브바 */}
           <Main>{children}</Main> {/* ← 메인 */}
         </div>
