@@ -15,7 +15,7 @@ const Layout = async (
   }>) => {
 
   const { id } = await params;
-  const {title} = await fetchMarkdown(`http://localhost:8080/post/${id}`);
+  const {title} = await fetchMarkdown(`http://localhost:8080/api/blog/devnews/${id}`);
 
   return (
     <div className={"px-8 py-8"}>

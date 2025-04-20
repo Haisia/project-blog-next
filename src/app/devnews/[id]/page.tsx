@@ -10,7 +10,7 @@ const Page = async (
   }>) => {
 
   const { id } = await params;
-  const {title, content} = await fetchMarkdown(`http://localhost:8080/post/${id}`);
+  const {title, content} = await fetchMarkdown(`http://localhost:8080/api/blog/devnews/${id}`);
 
   return (
     <>
