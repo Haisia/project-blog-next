@@ -18,10 +18,10 @@ const Layout = async (
   const {title} = await fetchMarkdown(`http://localhost:8080/post/${id}`);
 
   return (
-    <>
+    <div className={"px-8 py-8"}>
       <Breadcrumbs contents={[{content: group, link: groupLink}, {content: title, link: `${groupLink}/${id}`}]}/>
       <div>{children}</div>
-    </>
+    </div>
   );
 }
 

@@ -4,7 +4,7 @@ import SearchBar from "@/components/SearchBar";
 
 const Header = () => {
   return (
-    <header className="border-b border-gray-500/30 flex items-center py-3 px-80 justify-between h-15">
+    <header className="border-b border-gray-500/30 flex items-center py-3 px-25 justify-between h-15">
       <div className="font-bold flex items-center gap-2">
         <div className="relative w-10 h-10 rounded-full overflow-hidden">
           <Image
