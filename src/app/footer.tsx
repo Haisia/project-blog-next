@@ -12,7 +12,7 @@ const Footer = () => {
 const ViewOnGitHub = () => {
   return (
     <a
-      className="border border-gray-500/30 rounded-md inline-flex items-center gap-2 px-3 py-2 hover:border-white transition-colors"
+      className="border border-gray-500/30 rounded-md inline-flex items-center gap-2 px-3 py-2 hover:border-mypurple-100 transition-colors"
       href="https://github.com/Haisia/project-blog-next"
       target="_blank"
       rel="noopener noreferrer"
