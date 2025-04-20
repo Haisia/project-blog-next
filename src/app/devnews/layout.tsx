@@ -8,18 +8,24 @@ const Layout = async (
     children: ReactNode;
   }>) => {
 
-  const response = await fetch(`http://localhost:8080/api/blog/devnews/all/latest`);
-  const {articles}: {
-    articles: Article[],
-    year: string,
-    month: string,
-  } = await response.json();
+  const [articlesResponse, yearMonthResponse] = await Promise.all([
+    fetch(`http://localhost:8080/api/blog/devnews/all/latest`),
+    fetch(`http://localhost:8080/api/blog/devnews/all/year-month`),
+  ]);
+
+  const [articlesData, yearMonthData] = await Promise.all([
+    articlesResponse.json(),
+    yearMonthResponse.json(),
+  ]);
+
+  const { articles }: { articles: Article[]; year: string; month: string } = articlesData;
+  const { allUniqueYearMonth }: { allUniqueYearMonth: YearMonth[] } = yearMonthData;
 
   articles.sort((a, b) => Number(b.id) - Number(a.id));
 
   return (
     <div className="flex flex-1 items-stretch">
-      <PostNavBar articles={articles}/>
+      <PostNavBar articles={articles} yearMonths={allUniqueYearMonth}/>
       <div className="flex-1">
         {children}
       </div>
