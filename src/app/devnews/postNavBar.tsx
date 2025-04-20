@@ -32,9 +32,6 @@ const PostNavBar = () => {
     };
 
     fetchArticles();
-
-    console.log(articles)
-
   }, [selectedYearMonth]);
 
   const handleOnChangeSelectedYearMonth = (value:string) => setSelectedYearMonth(value);
