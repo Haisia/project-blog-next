@@ -1,13 +1,15 @@
 import React from 'react';
 
-const Breadcrumbs = (contents:string[]) => {
+type BreadcrumbsProps = {
+  contents: string[];
+};
+
+const Breadcrumbs = ({ contents }: BreadcrumbsProps) => {
   const joinedBreadcrumbs = contents.join(" > ");
 
   return (
-    <>
-      <div>{joinedBreadcrumbs}</div>
-    </>
+    <div>{joinedBreadcrumbs}</div>
   );
-}
+};
 
 export default Breadcrumbs;
