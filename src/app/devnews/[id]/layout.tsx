@@ -1,6 +1,5 @@
 import React, {ReactNode} from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import matter from "gray-matter";
 
 const group = "Dev News";
 const groupLink = "/devnews";

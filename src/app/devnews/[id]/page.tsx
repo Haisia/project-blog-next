@@ -1,6 +1,5 @@
 import React from 'react';
 import {MDXRemote} from "next-mdx-remote/rsc";
-import {fetchMarkdown} from "@/utils/fetchMarkdown";
 import matter from "gray-matter";
 
 const Page = async (
