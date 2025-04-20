@@ -16,7 +16,7 @@ const Breadcrumbs = ({contents}: BreadcrumbsProps) => {
       <div className={"text-[12px] text-gray-500/80"}>
         {contents.map((content, index) => (
           <span key={content.link}>
-            <Link href={content.link}>{content.content}</Link>
+            <Link className={"hover:text-mypurple-100"} href={content.link}>{content.content}</Link>
             {index < contents.length - 1 && <span> {'>'} </span>}
           </span>
         ))}
