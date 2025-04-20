@@ -18,19 +18,19 @@ const tempNavItems: NavItemProps[] = [
 
 const Navbar = () => {
   return (
-    <>
-      <div className={"h-full absolute py-5 bg-mylightblack border-r-1 border-gray-500/30 group"}>
-        <NavContainer navItems={tempNavItems}/>
+    <div className="relative group transition-all duration-300">
+      <div className="bg-mylightblack border-r border-gray-500/30 w-[75px] group-hover:w-[180px] transition-all duration-300 overflow-visible h-full">
+        <NavContainer navItems={tempNavItems} />
       </div>
-    </>
+    </div>
   );
-}
+};
 
 const NavContainer = ({navItems}: { navItems: NavItemProps[] }) => {
   return (
     <>
       <ul className={"p-3 [&>li]:py-1"}>
-        {navItems.map((navItem: NavItemProps) => (
+      {navItems.map((navItem: NavItemProps) => (
           <NavItem key={navItem.content} imageSrc={navItem.imageSrc} content={navItem.content} link={navItem.link}/>
         ))}
       </ul>
@@ -43,9 +43,11 @@ const NavItem = (props: NavItemProps) => {
 
   return (
     <li
-      className="flex items-center h-[40px] my-3 overflow-hidden group-hover:w-auto w-[48px] group-hover:overflow-visible
+      className="flex items-center h-[40px] my-3 overflow-hidden
+             w-full transition-all duration-300
              hover:bg-neutral-700/90 hover:border-[#a29bfe]
-             px-2 border border-transparent rounded-lg transition-[border-color] duration-300 ease-in-out cursor-pointer"
+             px-2 border border-transparent rounded-lg
+             cursor-pointer"
       onClick={() => router.push(props.link)}
     >
       <div className="min-w-[30px] flex justify-center">

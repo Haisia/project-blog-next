@@ -18,12 +18,15 @@ export default function RootLayout(
   }>) {
   return (
     <html lang="en">
-      <body className={"bg-myblack text-white min-h-screen flex flex-col"}>
+      <body className="bg-myblack text-white">
         <Header/>
-        <div className={"flex"}>
-          <Navbar/>
-          <Main>{children}</Main>
+
+        {/* 콘텐츠 영역 (Sidebar + Main) */}
+        <div className="flex items-stretch">
+          <Navbar/> {/* ← 사이드 네브바 */}
+          <Main>{children}</Main> {/* ← 메인 */}
         </div>
+
         <Footer/>
       </body>
     </html>
@@ -32,11 +35,8 @@ export default function RootLayout(
 
 const Main = ({children}: { children: ReactNode }) => {
   return (
-    <>
-      <div className={"flex-1 p-80 py-10"}>
-        {children}
-      </div>
-    </>
-  )
-}
-
+    <div className="flex-1 flex items-stretch">
+      {children}
+    </div>
+  );
+};

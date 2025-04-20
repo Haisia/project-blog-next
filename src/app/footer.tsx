@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="p-80 py-10 text-sm text-gray-400 space-y-4">
+    <footer className="px-30 py-20 text-sm text-gray-400 space-y-4 border-t border-gray-500/30">
       <ViewOnGitHub/>
       <ProjectInfo/>
     </footer>

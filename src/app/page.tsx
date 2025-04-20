@@ -4,7 +4,7 @@ import {learning, skilledIn} from "@/data/TechStackData";
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col md:flex-row items-start gap-10">
+      <div className="flex flex-col md:flex-row items-start gap-10 py-10 px-65">
         {/* 프로필 이미지 */}
         <ProfileImage/>
         {/* 본문 영역 */}
