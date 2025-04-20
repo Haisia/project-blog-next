@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import {fetchMarkdown} from "@/utils/fetchMarkdown";
 
 const group = "Dev News";
+const groupLink = "/devnews";
 
 const Layout = async (
   {
@@ -18,7 +19,7 @@ const Layout = async (
 
   return (
     <>
-      <Breadcrumbs contents={[{content: group, link: '/devnews'}, {content: title, link: `/devnews/${id}`}]}/>
+      <Breadcrumbs contents={[{content: group, link: groupLink}, {content: title, link: `${groupLink}/${id}`}]}/>
       <div>{children}</div>
     </>
   );
