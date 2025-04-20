@@ -15,26 +15,31 @@ const PostNavBar = () => {
   const [activeId, setActiveId] = useState<string | null>(null);
   const [selectedYearMonth, setSelectedYearMonth] = useState<string | null>(null);
 
-
   useEffect(() => {
     const fetchArticles = async () => {
-      let response;
-      if (!selectedYearMonth) {
-        response = await fetch("http://localhost:8080/api/blog/devnews/all/latest");
-      } else {
-        response = await fetch(`http://localhost:8080/api/blog/devnews/all/by/year-month/${selectedYearMonth}`);
-      }
-      const data = await response.json();
-      const articlesData: Article[] = Array.isArray(data) ? data : [];
+      try {
+        let response;
+        if (!selectedYearMonth) {
+          response = await fetch("http://localhost:8080/api/blog/devnews/all/latest");
+        } else {
+          response = await fetch(`http://localhost:8080/api/blog/devnews/all/by/year-month/${selectedYearMonth}`);
+        }
 
-      articlesData.sort((a, b) => Number(b.id) - Number(a.id));
-      setArticles(articlesData);
+        const {articles}: { articles:Article[] } = await response.json();
+
+        articles.sort((a, b) => Number(b.id) - Number(a.id));
+        setArticles(articles);
+      } catch (err) {
+        setArticles([]);
+      }
     };
 
     fetchArticles();
   }, [selectedYearMonth]);
 
-  const handleOnChangeSelectedYearMonth = (value:string) => setSelectedYearMonth(value);
+  const handleOnChangeSelectedYearMonth = (value: string) => {
+    setSelectedYearMonth(value);
+  };
 
   return (
     <div className="w-[400px] border-r border-gray-500/30 px-4 py-6 [&>*]:px-2 [&>div]:py-4">
