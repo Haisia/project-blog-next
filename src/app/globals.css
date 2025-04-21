@@ -1,10 +1,19 @@
 /* globals.css */
 @import "tailwindcss";
+@import 'prismjs/themes/prism-tomorrow.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @plugin '@tailwindcss/typography';
+
+.markdown pre {
+  @apply rounded-lg p-4 overflow-auto text-sm;
+}
+
+.markdown code {
+  @apply font-mono;
+}
 
 @theme {
   --color-myblack: #1d1d1d;
@@ -26,9 +35,11 @@
     p { @apply text-base leading-relaxed; }
     a { @apply text-blue-500 hover:text-blue-700; }
     strong { @apply font-bold; }
-    code { @apply bg-gray-100 px-1 py-0.5 rounded font-medium text-sm; }
+    code { @apply px-1 py-0.5 rounded font-medium; }
     blockquote { @apply border-l-4 pl-4 italic text-gray-600 border-gray-300; }
     ul { @apply list-disc pl-5; }
     ol { @apply list-decimal pl-5; }
+    table { @apply text-white; }
+    th { @apply text-white; }
   }
 }
