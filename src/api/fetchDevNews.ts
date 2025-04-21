@@ -1,6 +1,6 @@
 import {DevNewsResponse} from "@/types/DevNewsesResponse";
 
-const baseUrl = 'http://localhost:8080/api/blog/devnews';
+const baseUrl = `${process.env.NEXT_PUBLIC_BE_HOST}/api/blog/devnews`;
 
 export const fetchAllDevNews = async () => {
   const fetchResult = await fetch(`${baseUrl}/all`);
