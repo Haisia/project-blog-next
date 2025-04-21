@@ -2,11 +2,11 @@
 
 import React, {useEffect, useState} from "react";
 import Link from "next/link";
-import DropdownNavBar from "./dropdownNavBar";
+import DevNewsDropdownNavBar from "./devNewsDropdownNavBar";
 import {fetchAllDevNews} from "@/api/fetchDevNews";
 import {DevNews, DevNewsResponse, devNewsResponseGroupByYearMonth} from "@/types/DevNewsesResponse";
 
-const PostNavBar = () => {
+const DevNewsNevBar = () => {
   // 전체목록 그룹화
   const [groupedDevNews, setGroupedDevNews] = useState<Record<string,DevNews[]>>({});
   // 선택된 yearMonth
@@ -45,7 +45,7 @@ const PostNavBar = () => {
 
   return (
     <div className="w-[400px] border-r border-gray-500/30 px-4 py-6 [&>*]:px-2 [&>div]:py-4">
-      <DropdownNavBar
+      <DevNewsDropdownNavBar
         selectedYearMonth={selectedYearMonth}
         onChangeHandler={handleOnChangeSelectedYearMonth}
         groupedDevNews={groupedDevNews}
@@ -68,4 +68,4 @@ const PostNavBar = () => {
   );
 };
 
-export default PostNavBar;
+export default DevNewsNevBar;

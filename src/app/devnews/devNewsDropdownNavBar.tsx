@@ -3,7 +3,7 @@
 import React from "react";
 import {DevNews} from "@/types/DevNewsesResponse";
 
-const DropdownNavBar = (
+const DevNewsDropdownNavBar = (
   {
     selectedYearMonth,
     onChangeHandler,
@@ -35,4 +35,4 @@ const DropdownNavBar = (
   );
 };
 
-export default DropdownNavBar;
+export default DevNewsDropdownNavBar;
