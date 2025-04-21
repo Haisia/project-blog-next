@@ -1,41 +1,43 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import Link from "next/link";
 import DropdownNavBar from "./dropdownNavBar";
-
-export interface Article {
-  id: string;
-  title: string;
-  content: string;
-}
+import {fetchAllDevNews} from "@/api/fetchDevNews";
+import {DevNews, DevNewsResponse, devNewsResponseGroupByYearMonth} from "@/types/DevNewsesResponse";
 
 const PostNavBar = () => {
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [activeId, setActiveId] = useState<string | null>(null);
-  const [selectedYearMonth, setSelectedYearMonth] = useState<string | null>(null);
+  // 전체목록 그룹화
+  const [groupedDevNews, setGroupedDevNews] = useState<Record<string,DevNews[]>>({});
+  // 선택된 yearMonth
+  const [selectedYearMonth, setSelectedYearMonth] = useState<string>("");
+  // 선택된 yearMonth에 해당하는 devNews 전체목록
+  const [devNewses, setDevNewses] = useState<DevNews[]>([]);
+  // 선택된 게시글
+  const [activeDevNewsId, setActiveDevNewsId] = useState<number | null>(null);
+
 
   useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        let response;
-        if (!selectedYearMonth) {
-          response = await fetch("http://localhost:8080/api/blog/devnews/all/latest");
-        } else {
-          response = await fetch(`http://localhost:8080/api/blog/devnews/all/by/year-month/${selectedYearMonth}`);
-        }
+    const init = async () => {
+      const allDevNewsResponse: DevNewsResponse = await fetchAllDevNews();
+      const grouped = devNewsResponseGroupByYearMonth(allDevNewsResponse);
 
-        const {articles}: { articles:Article[] } = await response.json();
+      setGroupedDevNews(grouped);
 
-        articles.sort((a, b) => Number(b.id) - Number(a.id));
-        setArticles(articles);
-      } catch (err) {
-        setArticles([]);
-      }
-    };
+      const firstKey = Object.keys(grouped)[0];
+      setSelectedYearMonth(firstKey);
+      setDevNewses(grouped[firstKey]);
+    }
 
-    fetchArticles();
-  }, [selectedYearMonth]);
+    init();
+  }, []);
+
+  useEffect(() => {
+    const syncDevNewses = async () => {
+      setDevNewses(groupedDevNews[selectedYearMonth])
+    }
+    syncDevNewses();
+  }, [selectedYearMonth])
 
   const handleOnChangeSelectedYearMonth = (value: string) => {
     setSelectedYearMonth(value);
@@ -43,16 +45,21 @@ const PostNavBar = () => {
 
   return (
     <div className="w-[400px] border-r border-gray-500/30 px-4 py-6 [&>*]:px-2 [&>div]:py-4">
-      <DropdownNavBar onChangeHandler={handleOnChangeSelectedYearMonth} />
-      <ol className="list-decimal list-outside space-y-4 py-4 marker:text-lg marker:font-bold [&>li]:text-gray-400 mx-5 [&>li]:text-gray-400">
-        {articles.map((article) => (
-          <li key={article.id}>
+      <DropdownNavBar
+        selectedYearMonth={selectedYearMonth}
+        onChangeHandler={handleOnChangeSelectedYearMonth}
+        groupedDevNews={groupedDevNews}
+      />
+      <ol
+        className="list-decimal list-outside space-y-4 py-4 marker:text-lg marker:font-bold [&>li]:text-gray-400 mx-5">
+        {devNewses && devNewses.map((devNews) => (
+          <li key={devNews.id}>
             <Link
-              className={`hover:text-mypurple-100 ${activeId === article.id ? "text-mypurple-100" : ""}`}
-              onClick={() => setActiveId(article.id)}
-              href={`/devnews/${article.id}`}
+              className={`hover:text-mypurple-100 ${activeDevNewsId === devNews.id ? "text-mypurple-100" : ""}`}
+              onClick={() => setActiveDevNewsId(devNews.id)}
+              href={`/devnews/${devNews.id}`}
             >
-              {article.title}
+              {devNews.contentData.title}
             </Link>
           </li>
         ))}
