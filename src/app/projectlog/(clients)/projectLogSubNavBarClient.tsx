@@ -52,7 +52,7 @@ const PreLi = ({href}:{href:string}) => {
       <li className={"marker:size-[1.25rem] text-[1rem]"}>
         <Link className={`hover:text-mypurple-100 hover:bg-neutral-700/90 p-2 rounded-lg hover:border-mypurple-100 border border-transparent flex  justify-between`} 
               href={href}>
-          프로젝트 소개
+          프로젝트 개요
         </Link>
       </li>
     </>
