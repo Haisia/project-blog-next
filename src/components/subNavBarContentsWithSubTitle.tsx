@@ -18,7 +18,7 @@ const SubNavBarContentsWithSubTitle = (
       <ol
         className="list-decimal list-outside space-y-4 py-4 marker:text-lg marker:font-bold [&>li]:text-gray-400 mx-5">
         {items.map((content) => (
-          <li key={content.category} className={"marker:size-[1.25rem] text-[1.25rem]"}>
+          <li key={content.category} className={"marker:size-[1.25rem] text-[1rem]"}>
             <div
               className={`hover:text-mypurple-100 hover:bg-neutral-700/90 p-2 rounded-lg hover:border-mypurple-100 border border-transparent flex  justify-between`}
               onClick={() => handleSubTitleClick(content.category)}
