@@ -15,8 +15,7 @@ const Layout = async (
   }>) => {
 
   const { id } = await params;
-  const response = await fetchDevNews(id);
-  const devNews = response.blogDevNewses[0];
+  const devNews = await fetchDevNews(id);
 
   return (
     <div className={"px-8 py-8 mr-[400px]"}>

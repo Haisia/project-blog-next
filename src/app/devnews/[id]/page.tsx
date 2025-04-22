@@ -1,4 +1,3 @@
-// page.tsx
 import { compileMDX } from 'next-mdx-remote/rsc'
 import remarkGfm from 'remark-gfm'
 import { fetchDevNews } from "@/api/fetchDevNews"
@@ -6,8 +5,7 @@ import rehypePrismAll from "rehype-prism-plus";
 
 const Page = async ({ params }: Readonly<{ params: Promise<{ id: number }> }>) => {
   const { id } = await params
-  const response = await fetchDevNews(id)
-  const devNews = response.blogDevNewses[0]
+  const devNews = await fetchDevNews(id)
 
   const { content } = await compileMDX({
     source: devNews.contentData.content,
