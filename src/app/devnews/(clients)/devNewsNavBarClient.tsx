@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useEffect, useState } from "react";
-import { DevNews } from "@/types/DevNewsesResponse";
 import SubNavBarDropDown, { SubNavBarDropDownItem } from "@/components/subNavBarDropDown";
 import SubNavBarContents, { SubNavBarContentsItem } from "@/components/subNavBarContents";
+import {DevNews} from "@/api/fetchDevNews";
 
 const DevNewsNavBarClient = ({ devNews }: { devNews: DevNews[] }) => {
   const [groupedAllDevNews, setGroupedAllDevNews] = useState<Record<string, DevNews[]>>({});

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { SubNavBarDropDownItem } from "@/components/subNavBarDropDown";
 import { SubNavBarContentsWithSubTitleItem } from "@/components/subNavBarContentsWithSubTitle";
 import SubNavBarWithSubTitle from "@/components/subNavBarWithSubTitle";
-import { Project } from "@/types/Project";
+import {Project} from "@/api/fetchProjectLog";
 
 const ProjectLogSubNavBarClient = ({ projects }: { projects: Project[] }) => {
   const [dropDownSelectedProjectId, setDropDownSelectedProjectId] = useState<string>("");
