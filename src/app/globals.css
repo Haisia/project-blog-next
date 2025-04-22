@@ -18,11 +18,11 @@
 @theme {
   --color-myblack: #1d1d1d;
   --color-mylightblack: #202020;
-  --color-mypurple-100: #a29bfe; /* 밝은 보라 */
+  --color-mypurple-100: #a29bfe;
   --color-mypurple-200: #8e82fd;
   --color-mypurple-300: #7a68fc;
   --color-mypurple-400: #654efb;
-  --color-mypurple-500: #5134fa; /* 가장 진한 보라 */
+  --color-mypurple-500: #5134fa;
 }
 
 @layer components {
@@ -45,5 +45,22 @@
     ol { @apply list-decimal pl-5; }
     table { @apply text-white; }
     th { @apply text-white; }
+    li {@apply relative flex items-start pl-5 text-white marker:bg-mypurple-100 items-center;}
+
+    li::before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      color: #a29bfe;
+      font-size: 0.8rem;
+      line-height: 1;
+    }
+    input[type="checkbox"] {@apply w-4 h-4;}
+    li:has(input[type="checkbox"]) {
+      @apply list-none flex items-center gap-2;
+    }
+
+    img {@apply mx-1 my-0 inline-block align-middle;}
   }
 }

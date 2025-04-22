@@ -19,7 +19,7 @@ const ViewOnGitHub = () => {
     >
       <div className="relative w-5 h-5">
         <Image
-          src="/icons/commit.svg"
+          src="/icons/tech-stack/github.svg"
           alt="View on GitHub"
           fill
           className="object-contain"
