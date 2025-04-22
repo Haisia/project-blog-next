@@ -18,7 +18,11 @@
 @theme {
   --color-myblack: #1d1d1d;
   --color-mylightblack: #202020;
-  --color-mypurple-100: #a29bfe;
+  --color-mypurple-100: #a29bfe; /* 밝은 보라 */
+  --color-mypurple-200: #8e82fd;
+  --color-mypurple-300: #7a68fc;
+  --color-mypurple-400: #654efb;
+  --color-mypurple-500: #5134fa; /* 가장 진한 보라 */
 }
 
 @layer components {

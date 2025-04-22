@@ -30,11 +30,11 @@ const SubNavBarContentsWithSubTitle = (
                 <Image src={"/icons/menu/arrow_down.svg"} alt={"arrow_down"} width={24} height={24}/>}
             </div>
             <ol
-              className="list-decimal list-outside marker:text-lg marker:font-bold marker:text-[1rem] [&>li]:text-gray-400 ">
+              className="list-decimal list-outside marker:text-lg marker:font-bold marker:text-[1rem] [&>li]:text-gray-400">
               {content.category === selectedSubTitle && content.children.map((child) => (
-                <div key={child.link} className={"list-inside border-l-2 px-3 hover:border-mypurple-100 "}>
+                <div key={child.link} className={"list-inside border-l-2 px-3 hover:border-mypurple-300 text-[1rem]"}>
                   <li>
-                    <Link className={`hover:text-mypurple-100`} href={child.link}>{child.title}</Link>
+                    <Link className={`hover:text-mypurple-100 px-1`} href={child.link}>{child.title}</Link>
                   </li>
                 </div>
               ))}
