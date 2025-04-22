@@ -1,29 +1,25 @@
-import { compileMDX } from 'next-mdx-remote/rsc'
-import remarkGfm from 'remark-gfm'
-import { fetchDevNews } from "@/api/fetchDevNews"
-import rehypePrismAll from "rehype-prism-plus";
+import {fetchDevNews} from "@/api/fetchDevNews"
+import MarkdownPost from "@/components/markdownPost";
 
-const Page = async ({ params }: Readonly<{ params: Promise<{ id: number }> }>) => {
+const group = "Dev News";
+const groupLink = "/devnews";
+
+const Page = async (
+  { params }: Readonly<{ params: Promise<{ id: number }> }>
+) => {
   const { id } = await params
   const devNews = await fetchDevNews(id)
 
-  const { content } = await compileMDX({
-    source: devNews.contentData.content,
-    options: {
-      mdxOptions: {
-        remarkPlugins: [remarkGfm],
-        rehypePlugins: [rehypePrismAll],
-      },
-    },
-  });
+  const breadcrumbItems = [
+    {content: group, link: groupLink},
+    {content: devNews.contentData.title, link: `${groupLink}/${id}`}
+  ]
 
   return (
-    <>
-      <h1 className="text-[2.5rem] font-bold my-5">{devNews.contentData.title}</h1>
-      <article className="markdown max-w-none">
-        {content}
-      </article>
-    </>
+    <MarkdownPost
+      breadcrumbItems={breadcrumbItems}
+      item={devNews.contentData}
+    />
   )
 }
 
