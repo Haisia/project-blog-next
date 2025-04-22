@@ -1,8 +1,8 @@
 import {fetchDevNews} from "@/api/fetchDevNews"
 import MarkdownPost from "@/components/markdownPost";
 
-const group = "Dev News";
-const groupLink = "/devnews";
+const pageName = "Dev News";
+const pageLink = "/devnews";
 
 const Page = async (
   { params }: Readonly<{ params: Promise<{ id: number }> }>
@@ -11,8 +11,8 @@ const Page = async (
   const devNews = await fetchDevNews(id)
 
   const breadcrumbItems = [
-    {content: group, link: groupLink},
-    {content: devNews.contentData.title, link: `${groupLink}/${id}`}
+    {content: pageName, link: pageLink},
+    {content: devNews.contentData.title, link: `${pageLink}/${id}`}
   ]
 
   return (

@@ -8,25 +8,35 @@ export const fetchAllProjectLog = async () => {
 }
 
 export const fetchProjectLog = async (id: string) => {
-  const projects = await fetchAllProjectLog();
-  return projects.filter((project) => project.id === parseInt(id));
+  const fetchResult = await fetch(`${baseUrl}?projectId=${id}`, {next: {revalidate: 30}});
+  const {projectId, projectTitle, projectContent} = await fetchResult.json();
+
+  return {
+    id: projectId,
+    title: projectTitle,
+    content: projectContent,
+  };
 }
 
 export const fetchProjectLogPost = async (id: string) => {
   const fetchResult = await fetch(`${baseUrl}/${id}`, {next: {revalidate: 30}});
-  const {postId, postTitle, postContent, createdAt, updatedAt} = await fetchResult.json();
+  const {postId, postTitle, postContent, createdAt, updatedAt, projectId, projectTitle, projectContent} = await fetchResult.json();
 
   return {
     id: postId,
     title: postTitle,
     content: postContent,
-    createdAt, updatedAt
+    createdAt, updatedAt,
+    projectId,
+    projectTitle,
+    projectContent,
   };
 }
 
 export interface Project {
   id: number;
   title: string;
+  content: string;
   categories?: ProjectCategory[];
 }
 
