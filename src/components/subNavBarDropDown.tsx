@@ -1,7 +1,13 @@
 import React from "react";
 
 const SubNavBarDropDown = (
-  {valueSetter, items}:{valueSetter:(value:string)=>void;  items: SubNavBarDropDownItem[]},
+  {
+    valueSetter,
+    items
+  }: {
+    valueSetter: (value: string) => void;
+    items: SubNavBarDropDownItem[]
+  },
 ) => {
 
   return (
@@ -24,5 +30,5 @@ export default SubNavBarDropDown;
 
 export interface SubNavBarDropDownItem {
   content: string;
-  value: string|number;
+  value: string | number;
 }
