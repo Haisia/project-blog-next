@@ -5,7 +5,7 @@ import { DevNews } from "@/types/DevNewsesResponse";
 import SubNavBarDropDown, { SubNavBarDropDownItem } from "@/components/subNavBarDropDown";
 import SubNavBarContents, { SubNavBarContentsItem } from "@/components/subNavBarContents";
 
-const DevNewsNevBarClient = ({ devNews }: { devNews: DevNews[] }) => {
+const DevNewsNavBarClient = ({ devNews }: { devNews: DevNews[] }) => {
   const [groupedAllDevNews, setGroupedAllDevNews] = useState<Record<string, DevNews[]>>({});
   const [selectedYearMonth, setSelectedYearMonth] = useState<string>("");
   const [subNavBarContentsItems, setSubNavBarContentsItems] = useState<SubNavBarContentsItem[]>([]);
@@ -37,7 +37,7 @@ const DevNewsNevBarClient = ({ devNews }: { devNews: DevNews[] }) => {
   );
 };
 
-export default DevNewsNevBarClient;
+export default DevNewsNavBarClient;
 
 const devNewsResponseGroupByYearMonth = (devNewses: DevNews[]) => {
   const grouped: Record<string, DevNews[]> = {};
