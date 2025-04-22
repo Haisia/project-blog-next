@@ -3,6 +3,7 @@ import Breadcrumb, {BreadcrumbItem} from "@/components/breadcrumb";
 import {compileMDX} from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypePrismAll from "rehype-prism-plus";
+import rehypeExternalLinks from "@/config/rehypeExternalLinks";
 
 export interface MarkdownPostItem {
   title: string;
@@ -24,7 +25,7 @@ const MarkdownPost = async (
     options: {
       mdxOptions: {
         remarkPlugins: [remarkGfm],
-        rehypePlugins: [rehypePrismAll],
+        rehypePlugins: [rehypePrismAll, rehypeExternalLinks],
       },
     },
   })

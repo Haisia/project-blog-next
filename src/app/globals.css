@@ -37,10 +37,10 @@
     h2 { @apply text-3xl font-semibold; }
     h3 { @apply text-2xl font-medium; }
     p { @apply text-base leading-relaxed; }
-    a { @apply text-blue-500 hover:text-blue-700; }
+    a { @apply text-mypurple-200 hover:text-mypurple-400; }
     strong { @apply font-bold; }
     code { @apply px-1 py-0.5 rounded font-medium; }
-    blockquote { @apply border-l-4 pl-4 italic text-gray-600 border-gray-300; }
+    blockquote { @apply border-l-4 pl-4 italic text-gray-600 border-mypurple-400; }
     ul { @apply list-disc pl-5; }
     ol { @apply list-decimal pl-5; }
     table { @apply text-white; }
