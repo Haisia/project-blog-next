@@ -1,5 +1,5 @@
 import React, {ReactNode} from "react";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import Breadcrumbs from "@/components/breadcrumbs";
 import {fetchDevNews} from "@/api/fetchDevNews";
 
 const group = "Dev News";

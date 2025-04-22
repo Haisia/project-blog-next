@@ -9,7 +9,7 @@ const SubNavBarDropDown = (
       className="text-white [&>option]:bg-myblack w-full border-gray-500/30 border-2 rounded-lg py-2"
       onChange={(e) => valueSetter(e.target.value)}
     >
-      {items.map((item) => {
+      {items && items.map((item) => {
         return (
           <option key={item.content} value={item.value}>
             {item.content}
