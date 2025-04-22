@@ -6,10 +6,12 @@ import SubNavBarContentsWithSubTitle, {
 
 const SubNavBarWithSubTitle = (
   {
+    preLi,
     selectedDropDownValueSetter,
     subNavBarDropDownItems,
     subNavBarContentsItems
   } : {
+    preLi?: React.ReactNode;
     selectedDropDownValueSetter : (value: string) => void;
     subNavBarDropDownItems : SubNavBarDropDownItem[];
     subNavBarContentsItems : SubNavBarContentsWithSubTitleItem[];
@@ -22,6 +24,7 @@ const SubNavBarWithSubTitle = (
         items={subNavBarDropDownItems}
       />
       <SubNavBarContentsWithSubTitle
+        preLi={preLi}
         items={subNavBarContentsItems}
       />
     </div>
