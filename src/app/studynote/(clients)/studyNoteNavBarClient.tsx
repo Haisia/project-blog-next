@@ -8,13 +8,8 @@ import {StudyNoteCategory, StudyNoteCategoryDto} from "@/types/studynote/StudyNo
 const baseUrl = "/studynote";
 
 const StudyNoteNavBarClient = ({categories}: { categories: StudyNoteCategoryDto[] }) => {
-  const categoryInstances = useMemo(() => {
-    return categories?.map(StudyNoteCategory.fromObject) ?? [];
-  }, [categories]);
-
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(
-    categories?.[0]?.id?.toString?.() ?? ""
-  );
+  const [categoryInstances, setCategoryInstances] = useState<StudyNoteCategory[]>([]);
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>("");
   const [dropDownItems, setDropDownItems] = useState<SubNavBarDropDownItem[]>([]);
   const [contentItems, setContentItems] = useState<SubNavBarContentsItem[]>([]);
 
@@ -22,7 +17,7 @@ const StudyNoteNavBarClient = ({categories}: { categories: StudyNoteCategoryDto[
     const createdDropdownItems
       = categoryInstances.map(category => category.toSubNavBarDropDownItem());
     setDropDownItems(createdDropdownItems);
-
+    setCategoryInstances(categories.map(StudyNoteCategory.fromObject));
     setSelectedCategoryId(categories[0].id.toString());
 
     const createdContentsItems = categoryInstances[0].toSubNavBarContentsItem(baseUrl);
