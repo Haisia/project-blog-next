@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import SubNavBarDropDown, {SubNavBarDropDownItem} from "@/components/subNavBarDropDown";
 import SubNavBarContents, {SubNavBarContentsItem} from "@/components/subNavBarContents";
 import {StudyNoteCategory, StudyNoteCategoryDto} from "@/types/studynote/StudyNoteCategory";
@@ -8,8 +8,13 @@ import {StudyNoteCategory, StudyNoteCategoryDto} from "@/types/studynote/StudyNo
 const baseUrl = "/studynote";
 
 const StudyNoteNavBarClient = ({categories}: { categories: StudyNoteCategoryDto[] }) => {
-  const categoryInstances = categories?.map((category: StudyNoteCategoryDto) => StudyNoteCategory.fromObject(category))
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(categories[0].id.toString());
+  const categoryInstances = useMemo(() => {
+    return categories?.map(StudyNoteCategory.fromObject) ?? [];
+  }, [categories]);
+
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(
+    categories?.[0]?.id?.toString?.() ?? ""
+  );
   const [dropDownItems, setDropDownItems] = useState<SubNavBarDropDownItem[]>([]);
   const [contentItems, setContentItems] = useState<SubNavBarContentsItem[]>([]);
 
