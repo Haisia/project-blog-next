@@ -9,9 +9,7 @@ const SubNavBarContents = ({items}:{items:SubNavBarContentsItem[]}) => {
         {items && items.map((item) => (
           <li key={item.title}>
             <Link
-              // className={`hover:text-mypurple-100 ${activeDevNewsId === item.id ? "text-mypurple-100" : ""}`}
               className={`hover:text-mypurple-100`}
-              // onClick={() => setActiveDevNewsId(item.id)}
               href={item.link}
             >
               {item.title}
@@ -23,6 +21,8 @@ const SubNavBarContents = ({items}:{items:SubNavBarContentsItem[]}) => {
   )
 }
 
+export default SubNavBarContents;
+
 export class SubNavBarContentsItem {
   constructor(
     public title: string,
@@ -30,4 +30,6 @@ export class SubNavBarContentsItem {
   ) {}
 }
 
-export default SubNavBarContents;
+export interface toSubNavBarContentsItemAble {
+  toSubNavBarContentsItems(baseUrl: string): SubNavBarContentsItem[];
+}

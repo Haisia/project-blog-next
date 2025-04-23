@@ -34,3 +34,7 @@ export class SubNavBarDropDownItem {
     public value: string
   ) {}
 }
+
+export interface toSubNavBarDropDownItemAble {
+  toSubNavBarDropDownItem(): SubNavBarDropDownItem;
+}
