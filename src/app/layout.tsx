@@ -4,6 +4,8 @@ import {ReactNode} from "react";
 import Header from "@/app/header";
 import Footer from "@/app/footer";
 import Navbar from "@/app/navigation";
+import Image from "next/image";
+import ScrollTop from "@/app/(clients)/scrollTop";
 
 export const metadata: Metadata = {
   title: "Haisia\`s blog",
@@ -23,13 +25,11 @@ export default function RootLayout(
     <html lang="en">
       <body className="bg-myblack text-white">
         <Header/>
-
-        {/* 콘텐츠 영역 (Sidebar + Main) */}
         <div className="flex items-stretch min-h-[500px]">
-          <Navbar/> {/* ← 사이드 네브바 */}
-          <Main>{children}</Main> {/* ← 메인 */}
+          <Navbar/>
+          <Main>{children}</Main>
         </div>
-
+        <ScrollTop/>
         <Footer/>
       </body>
     </html>
