@@ -14,15 +14,17 @@ const StudyNoteNavBarClient = ({categories}: { categories: StudyNoteCategoryDto[
   const [contentItems, setContentItems] = useState<SubNavBarContentsItem[]>([]);
 
   useEffect(() => {
-    setCategoryInstances(categories.map(StudyNoteCategory.fromObject));
-    const createdDropdownItems
-      = categoryInstances.map(category => category.toSubNavBarDropDownItem());
+    const instances = categories.map(StudyNoteCategory.fromObject);
+    setCategoryInstances(instances);
+    const createdDropdownItems = instances.map(category =>
+      category.toSubNavBarDropDownItem()
+    );
     setDropDownItems(createdDropdownItems);
     setSelectedCategoryId(categories[0].id.toString());
 
-    const createdContentsItems = categoryInstances[0].toSubNavBarContentsItem(baseUrl);
+    const createdContentsItems = instances[0]?.toSubNavBarContentsItem(baseUrl);
     setContentItems(createdContentsItems);
-  }, [categories, categoryInstances]);
+  }, [categories]);
 
   useEffect(() => {
     const matched
