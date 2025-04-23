@@ -4,7 +4,6 @@ import {ReactNode} from "react";
 import Header from "@/app/header";
 import Footer from "@/app/footer";
 import Navbar from "@/app/navigation";
-import Image from "next/image";
 import ScrollTop from "@/app/(clients)/scrollTop";
 
 export const metadata: Metadata = {
