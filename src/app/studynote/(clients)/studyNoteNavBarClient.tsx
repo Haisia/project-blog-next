@@ -8,7 +8,7 @@ import {StudyNoteCategory, StudyNoteCategoryDto} from "@/types/studynote/StudyNo
 const baseUrl = "/studynote";
 
 const StudyNoteNavBarClient = ({categories}: { categories: StudyNoteCategoryDto[] }) => {
-  const categoryInstances = categories.map((category: StudyNoteCategoryDto) => StudyNoteCategory.fromObject(category))
+  const categoryInstances = categories?.map((category: StudyNoteCategoryDto) => StudyNoteCategory.fromObject(category))
   const [selectedCategoryId, setSelectedCategoryId] = useState<string>(categories[0].id.toString());
   const [dropDownItems, setDropDownItems] = useState<SubNavBarDropDownItem[]>([]);
   const [contentItems, setContentItems] = useState<SubNavBarContentsItem[]>([]);
@@ -22,7 +22,7 @@ const StudyNoteNavBarClient = ({categories}: { categories: StudyNoteCategoryDto[
 
     const createdContentsItems = categoryInstances[0].toSubNavBarContentsItem(baseUrl);
     setContentItems(createdContentsItems);
-  }, []);
+  }, [categories, categoryInstances]);
 
   useEffect(() => {
     const matched
@@ -31,7 +31,7 @@ const StudyNoteNavBarClient = ({categories}: { categories: StudyNoteCategoryDto[
 
     const createdContentsItems = matched.toSubNavBarContentsItem(baseUrl);
     setContentItems(createdContentsItems);
-  }, [selectedCategoryId]);
+  }, [categoryInstances, selectedCategoryId]);
 
   return (
     <div className="w-[400px] border-r border-gray-500/30 px-4 py-6 [&>*]:px-2 [&>div]:py-4">
