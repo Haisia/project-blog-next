@@ -6,7 +6,7 @@ import SubNavBarContents, {SubNavBarContentsItem} from "@/components/subNavBarCo
 import {StudyNoteCategory, StudyNoteCategoryDto} from "@/types/studynote/StudyNoteCategory";
 
 const baseUrl = "/studynote";
-
+//
 const StudyNoteNavBarClient = ({categories}: { categories: StudyNoteCategoryDto[] }) => {
   const [categoryInstances, setCategoryInstances] = useState<StudyNoteCategory[]>([]);
   const [selectedCategoryId, setSelectedCategoryId] = useState<string>("");
