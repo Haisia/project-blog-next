@@ -17,7 +17,7 @@ const SubNavBarDropDown = (
     >
       {items && items.map((item) => {
         return (
-          <option key={item.content} value={item.value}>
+          <option key={item.value} value={item.value}>
             {item.content}
           </option>
         );
