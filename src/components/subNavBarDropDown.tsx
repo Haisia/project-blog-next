@@ -28,7 +28,9 @@ const SubNavBarDropDown = (
 
 export default SubNavBarDropDown;
 
-export interface SubNavBarDropDownItem {
-  content: string;
-  value: string | number;
+export class SubNavBarDropDownItem {
+  constructor(
+    public content: string,
+    public value: string
+  ) {}
 }

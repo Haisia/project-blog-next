@@ -23,9 +23,11 @@ const SubNavBarContents = ({items}:{items:SubNavBarContentsItem[]}) => {
   )
 }
 
-export interface SubNavBarContentsItem {
-  title: string;
-  link: string;
+export class SubNavBarContentsItem {
+  constructor(
+    public title: string,
+    public link: string
+  ) {}
 }
 
 export default SubNavBarContents;
