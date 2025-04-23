@@ -6,7 +6,7 @@ import SubNavBarContents, {SubNavBarContentsItem} from "@/components/subNavBarCo
 import {StudyNoteCategory, StudyNoteCategoryDto} from "@/types/studynote/StudyNoteCategory";
 
 const baseUrl = "/studynote";
-//
+
 const StudyNoteNavBarClient = ({categories}: { categories: StudyNoteCategoryDto[] }) => {
   const [categoryInstances, setCategoryInstances] = useState<StudyNoteCategory[]>([]);
   const [selectedCategoryId, setSelectedCategoryId] = useState<string>("");
@@ -14,7 +14,7 @@ const StudyNoteNavBarClient = ({categories}: { categories: StudyNoteCategoryDto[
   const [contentItems, setContentItems] = useState<SubNavBarContentsItem[]>([]);
 
   useEffect(() => {
-    setCategoryInstances(categories?.map(StudyNoteCategory.fromObject));
+    setCategoryInstances(categories.map(StudyNoteCategory.fromObject));
     const createdDropdownItems
       = categoryInstances.map(category => category.toSubNavBarDropDownItem());
     setDropDownItems(createdDropdownItems);
