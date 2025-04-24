@@ -35,6 +35,6 @@ export class SubNavBarDropDownItem {
   ) {}
 }
 
-export interface toSubNavBarDropDownItemAble {
+export interface ToSubNavBarDropDownItemAble {
   toSubNavBarDropDownItem(): SubNavBarDropDownItem;
 }

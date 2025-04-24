@@ -1,6 +1,6 @@
 import {StudyNote, StudyNoteDto} from "@/types/studynote/StudyNote";
-import {SubNavBarDropDownItem, toSubNavBarDropDownItemAble} from "@/components/subNavBarDropDown";
-import {SubNavBarContentsItem, toSubNavBarContentsItemAble} from "@/components/subNavBarContents";
+import {SubNavBarDropDownItem, ToSubNavBarDropDownItemAble} from "@/components/subNavBarDropDown";
+import {SubNavBarContentsItem, ToSubNavBarContentsItemsAble} from "@/components/subNavBarContents";
 
 export interface StudyNoteCategoryDto {
   id: number;
@@ -8,7 +8,7 @@ export interface StudyNoteCategoryDto {
   studyNotes: StudyNoteDto[];
 }
 
-export class StudyNoteCategory implements toSubNavBarDropDownItemAble, toSubNavBarContentsItemAble {
+export class StudyNoteCategory implements ToSubNavBarDropDownItemAble, ToSubNavBarContentsItemsAble {
   constructor(
     public id: number,
     public title: string,

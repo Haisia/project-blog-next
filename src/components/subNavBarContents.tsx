@@ -30,6 +30,6 @@ export class SubNavBarContentsItem {
   ) {}
 }
 
-export interface toSubNavBarContentsItemAble {
+export interface ToSubNavBarContentsItemsAble {
   toSubNavBarContentsItems(baseUrl: string): SubNavBarContentsItem[];
 }

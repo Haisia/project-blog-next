@@ -1,9 +1,9 @@
-import {SubNavBarContentsItem, toSubNavBarContentsItemAble} from "@/components/subNavBarContents";
-import {SubNavBarDropDownItem, toSubNavBarDropDownItemAble} from "@/components/subNavBarDropDown";
+import {SubNavBarContentsItem, ToSubNavBarContentsItemsAble} from "@/components/subNavBarContents";
+import {SubNavBarDropDownItem, ToSubNavBarDropDownItemAble} from "@/components/subNavBarDropDown";
 import {useEffect, useState} from "react";
 
 export const useSubNavBar = (
-  items: (toSubNavBarContentsItemAble & toSubNavBarDropDownItemAble)[],
+  items: (ToSubNavBarContentsItemsAble & ToSubNavBarDropDownItemAble)[],
   baseUrl: string
 ) => {
   const [selectedId, setSelectedId] = useState<string>("");
