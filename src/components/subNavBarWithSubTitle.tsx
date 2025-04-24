@@ -7,25 +7,25 @@ import SubNavBarContentsWithSubTitle, {
 const SubNavBarWithSubTitle = (
   {
     preLi,
-    selectedDropDownValueSetter,
-    subNavBarDropDownItems,
-    subNavBarContentsItems
+    selectedIdSetter,
+    dropDownItems,
+    contentsItems
   } : {
     preLi?: React.ReactNode;
-    selectedDropDownValueSetter : (value: string) => void;
-    subNavBarDropDownItems : SubNavBarDropDownItem[];
-    subNavBarContentsItems : SubNavBarContentsWithSubTitleItem[];
+    selectedIdSetter : (value: string) => void;
+    dropDownItems : SubNavBarDropDownItem[];
+    contentsItems : SubNavBarContentsWithSubTitleItem[];
   }
 ) => {
   return (
     <div className="w-[400px] border-r border-gray-500/30 px-4 py-6 [&>*]:px-2 [&>div]:py-4">
       <SubNavBarDropDown
-        valueSetter={selectedDropDownValueSetter}
-        items={subNavBarDropDownItems}
+        valueSetter={selectedIdSetter}
+        items={dropDownItems}
       />
       <SubNavBarContentsWithSubTitle
         preLi={preLi}
-        items={subNavBarContentsItems}
+        items={contentsItems}
       />
     </div>
   );

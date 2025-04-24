@@ -2,7 +2,7 @@ const baseUrl = `${process.env.NEXT_PUBLIC_BE_HOST}/api/blog/projectlog`;
 
 export const fetchAllProjectLog = async () => {
   const fetchResult = await fetch(`${baseUrl}/all`, {next: {revalidate: 30}});
-  const {projects}: { projects: Project[] } = await fetchResult.json();
+  const {projects}: { projects: ProjectLogResponse[] } = await fetchResult.json();
 
   return projects;
 }
@@ -33,20 +33,20 @@ export const fetchProjectLogPost = async (id: string) => {
   };
 }
 
-export interface Project {
+interface ProjectLogResponse {
   id: number;
   title: string;
   content: string;
-  categories?: ProjectCategory[];
+  categories?: ProjectLogCategory[];
 }
 
-export interface ProjectCategory {
+interface ProjectLogCategory {
   id: number;
   title: string;
-  posts?: ProjectPost[];
+  posts?: ProjectLogPost[];
 }
 
-export interface ProjectPost {
+interface ProjectLogPost {
   id: number;
   title: string;
   content: string;

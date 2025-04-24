@@ -47,6 +47,10 @@ const SubNavBarContentsWithSubTitle = (
   )
 }
 
+export interface ToSubNavBarContentsWithSubTitleItemAble {
+  toSubNavBarContentsWithSubTitleItem(baseUrl: string): SubNavBarContentsWithSubTitleItem[];
+}
+
 export interface SubNavBarContentsWithSubTitleItem {
   category: string;
   children: Content[];
