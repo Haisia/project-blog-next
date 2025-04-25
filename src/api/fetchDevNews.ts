@@ -14,9 +14,16 @@ export const fetchAllDevNews = async (): Promise<DevNewsDto[]> => {
   }));
 };
 
-export const fetchDevNews = async (id: number): Promise<DevNewsDto> => {
-  const fetchResult = await fetch(`${baseUrl}/${id}`, { next: { revalidate: 30 } });
-  const { blogDevNewses }: BlogDevNewsApiResponse = await fetchResult.json();
+export const fetchDevNews = async (id: number): Promise<DevNewsDto | undefined> => {
+  const res = await fetch(`${baseUrl}/${id}`, { next: { revalidate: 30 } });
+
+  if (!res.ok) return undefined;
+
+  const json = await res.json();
+
+  const blogDevNewses = json?.blogDevNewses;
+  if (!Array.isArray(blogDevNewses) || blogDevNewses.length === 0) return undefined;
+
   const devNews = blogDevNewses[0];
 
   return {

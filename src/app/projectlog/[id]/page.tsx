@@ -1,9 +1,14 @@
 import React from 'react';
 import {fetchProjectLogPost} from "@/api/fetchProjectLog";
 import MarkdownPost from "@/components/markdownPost";
+import {staticParamsGenerator} from "@/utils/staticParamsGenerator";
 
 const pageName = "Project Log"
 const pageLink = "/projectlog"
+
+export function generateStaticParams() {
+  return staticParamsGenerator(50);
+}
 
 const Page = async (
   { params }: Readonly<{ params: Promise<{ id: number }> }>
