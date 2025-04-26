@@ -1,21 +1,25 @@
-import MarkdownPost from "@/components/markdownPost";
+import DevToolPost from "@/components/mdx/devToolPost";
 
 const menuName = "Dev Tool";
 const menuLink = "/devtool";
 const pageName = "Base64 Encoding & Decoding";
 const pageLink = "/base64";
 
-const Page = async () => {
-  const breadcrumbItems = [
-    { content: menuName, link: menuLink },
-    { content: pageName, link: `${menuLink}${pageLink}` }
-  ];
+const breadcrumbItems = [
+  {content: menuName, link: menuLink},
+  {content: pageName, link: `${menuLink}${pageLink}`}
+];
 
+const Page = async () => {
   return (
-    <MarkdownPost
-      breadcrumbItems={breadcrumbItems}
-      item={{ title: pageName, content: '' }}
-    />
+    <>
+      <DevToolPost
+        breadcrumbItems={breadcrumbItems}
+        title={pageName}
+      >
+        <div>test</div>
+      </DevToolPost>
+    </>
   );
 };
 
