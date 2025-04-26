@@ -8,7 +8,7 @@ const SubNavBarContentsWithSubTitle = (
   {preLi, items}: { preLi?: React.ReactNode; items: SubNavBarContentsWithSubTitleItem[] }
 ) => {
   const [selectedSubTitle, setSelectedSubTitle] = React.useState<string>("");
-  const [selectedPost, setSelectedPost] = React.useState<string>("");
+  const [selectedPostLink, setSelectedPostLink] = React.useState<string>("");
 
   const handleSubTitleClick = (subTitle: string) => {
     setSelectedSubTitle((prev) => (prev === subTitle ? "" : subTitle));
@@ -34,12 +34,12 @@ const SubNavBarContentsWithSubTitle = (
             <ol
               className="list-decimal list-outside marker:text-lg marker:font-bold marker:text-[1rem] [&>li]:text-gray-400">
               {content.category === selectedSubTitle && content.children.map((child) => (
-                <div key={child.link} className={`list-inside border-l-2 px-3 hover:border-mypurple-300 ${selectedPost === child.title ? "border-mypurple-300" : ""} text-[1rem]`}>
+                <div key={child.link} className={`list-inside border-l-2 px-3 hover:border-mypurple-300 ${selectedPostLink === child.link ? "border-mypurple-300" : ""} text-[1rem]`}>
                   <li>
                     <Link
-                      className={`hover:text-mypurple-100 px-1 ${selectedPost === child.title ? "text-mypurple-100" : ""}`}
+                      className={`hover:text-mypurple-100 px-1 ${selectedPostLink === child.link ? "text-mypurple-100" : ""}`}
                       href={child.link}
-                      onClick={() => setSelectedPost(child.title)}
+                      onClick={() => setSelectedPostLink(child.link)}
                     >
                       {child.title}
                     </Link>

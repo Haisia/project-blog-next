@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 const SubNavBarContents = ({items}:{items:SubNavBarContentsItem[]}) => {
-  const [selectedPost, setSelectedPost] = React.useState<string>("");
+  const [selectedPostLink, setSelectedPostLink] = React.useState<string>("");
 
   return (
     <>
@@ -13,9 +13,9 @@ const SubNavBarContents = ({items}:{items:SubNavBarContentsItem[]}) => {
         {items && items.map((item) => (
           <li key={item.title}>
             <Link
-              className={`hover:text-mypurple-100 ${selectedPost === item.title ? "text-mypurple-100" : ""}`}
+              className={`hover:text-mypurple-100 ${selectedPostLink === item.link ? "text-mypurple-100" : ""}`}
               href={item.link}
-              onClick={() => setSelectedPost(item.title)}
+              onClick={() => setSelectedPostLink(item.link)}
             >
               {item.title}
             </Link>
