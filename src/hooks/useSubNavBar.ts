@@ -16,14 +16,14 @@ export const useSubNavBar = (
     setDropDownItems(items.map(item => item.toSubNavBarDropDownItem()));
     setSelectedId(items[0].toSubNavBarDropDownItem().value);
     setContentItems(items[0].toSubNavBarContentsItems(baseUrl));
-  }, [items]);
+  }, []);
 
   useEffect(() => {
     const matched = items.find(item => item.toSubNavBarDropDownItem().value === selectedId);
     if (matched) {
       setContentItems(matched.toSubNavBarContentsItems(baseUrl));
     }
-  }, [selectedId, items]);
+  }, [selectedId]);
 
   return {
     selectedId,
