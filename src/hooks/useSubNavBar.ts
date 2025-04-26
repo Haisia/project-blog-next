@@ -13,11 +13,24 @@ export const useSubNavBar = (
   useEffect(() => {
     if (!items.length) return;
 
-    setDropDownItems(items.map(item => item.toSubNavBarDropDownItem()));
-    setSelectedId(items[0].toSubNavBarDropDownItem().value);
-    setContentItems(items[0].toSubNavBarContentsItems(baseUrl));
-    console.log('#### 1');
+    const dropdowns = items.map(item => item.toSubNavBarDropDownItem());
+    setDropDownItems(dropdowns);
+
+    const matched = items.find(item => item.toSubNavBarDropDownItem().value === selectedId);
+
+    if (matched) {
+      setContentItems(matched.toSubNavBarContentsItems(baseUrl));
+    } else {
+      const defaultId = dropdowns[0]?.value;
+      if (defaultId) {
+        setSelectedId(defaultId);
+        setContentItems(items[0].toSubNavBarContentsItems(baseUrl));
+      }
+    }
+
+    console.log("#### 1");
   }, [baseUrl, items]);
+
 
   useEffect(() => {
     const matched = items.find(item => item.toSubNavBarDropDownItem().value === selectedId);
