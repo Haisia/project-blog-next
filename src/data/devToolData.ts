@@ -6,8 +6,8 @@ export const devToolCategories: DevToolCategoryDto[] = [
     title: '인코딩 & 디코딩',
     devTools: [
       {id: 'ed-base64', title: 'Base64', content: ''},
-      {id: 'ed-unicode', title: 'Unicode',content: ''},
-      {id: 'ed-cron', title: 'Cron Expression',content: ''},
+      {id: 'ed-unicode', title: 'Unicode', content: ''},
+      {id: 'ed-cron', title: 'Cron Expression', content: ''},
       {id: 'ed-url', title: 'URL Encoding', content: ''},
       {id: 'ed-htmlentities', title: 'HTML Entities', content: ''},
       {id: 'ed-jwt', title: 'JWT Decoder', content: ''},
@@ -31,6 +31,15 @@ export const devToolDefaultContent = {
     '>귀찮고 반복되는 일을 코드로 해결하려는 것.  \n' +
     '>개발자라면 당연히 가져야 할 마음가짐이 아닐까? 그래서 직접 만들어보려 한다. \n' +
     '---\n' +
+    '## 개발의 목적?\n' +
+    '\n' +
+    '- 매번 검색하지 않고 하나의 사이트에 모아두기\n' +
+    '- 광고 없이, 필요한 기능만 깔끔하게 사용\n' +
+    '- 내가 자주 쓰는 도구를 내 손에 맞게 구현\n' +
+    '\n' +
+    '빠르고 깔끔하게, 필요한 기능만 모아두는 게 목표다.\n' +
+    '\n' +
+    '---'+
     '\n' +
     '## 어떤 도구들을 넣을 건지?\n' +
     '\n' +
@@ -42,13 +51,5 @@ export const devToolDefaultContent = {
     '지금은 많지 않지만,  \n' +
     '필요할 때마다 하나씩 추가해서 쌓아갈 생각이다.\n' +
     '\n' +
-    '---\n' +
-    '\n' +
-    '## 개발의 목적?\n' +
-    '\n' +
-    '- 매번 검색하지 않고 하나의 사이트에 모아두기\n' +
-    '- 광고 없이, 필요한 기능만 깔끔하게 사용\n' +
-    '- 내가 자주 쓰는 도구를 내 손에 맞게 구현\n' +
-    '\n' +
-    '빠르고 깔끔하게, 필요한 기능만 모아두는 게 목표다.\n',
+    '---\n'
 }

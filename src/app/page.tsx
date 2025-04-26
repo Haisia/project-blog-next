@@ -5,14 +5,10 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col md:flex-row items-start gap-10 py-10 px-65 w-full">
-        {/* 프로필 이미지 */}
         <ProfileImage/>
-        {/* 본문 영역 */}
         <div className="flex-1 space-y-6 text-base text-gray-300 leading-relaxed">
-          {/* 소개 */}
           <AboutMe/>
           <hr className="border-gray-600"/>
-          {/* 기술 섹션 */}
           <TechStackSection/>
         </div>
       </div>
@@ -52,9 +48,7 @@ const TechStackSection = () => {
   return (
     <>
       <section className="flex flex-col md:flex-row gap-4 mr-70">
-        {/* 자신 있는 기술 */}
         <TechStackContainer title={"Skilled In"} contents={skilledIn}/>
-        {/* 공부 중인 기술 */}
         <TechStackContainer title={"Learning"} contents={learning}/>
       </section>
     </>
