@@ -5,7 +5,7 @@ import {SubNavBarContentsWithSubTitleItem,
 } from "@/components/subNavBarContentsWithSubTitle";
 
 export interface ProjectLogDto {
-  id: number;
+  id: string;
   title: string;
   content: string;
   categories?: ProjectLogCategoryDto[];
@@ -13,7 +13,7 @@ export interface ProjectLogDto {
 
 export class ProjectLog implements ToSubNavBarDropDownItemAble, ToSubNavBarContentsWithSubTitleItemAble {
   constructor(
-    public id: number,
+    public id: string,
     public title: string,
     public content: string,
     public categories: ProjectLogCategory[] = []

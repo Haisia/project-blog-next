@@ -1,14 +1,14 @@
 import {ProjectLogPost, ProjectLogPostDto} from "@/types/projectlog/ProjectLogPost";
 
 export interface ProjectLogCategoryDto {
-  id: number;
+  id: string;
   title: string;
   posts?: ProjectLogPostDto[]
 }
 
 export class ProjectLogCategory {
   constructor(
-    public id: number,
+    public id: string,
     public title: string,
     public posts: ProjectLogPost[]
   ) {}

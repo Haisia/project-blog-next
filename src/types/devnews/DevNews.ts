@@ -1,7 +1,7 @@
 import {SubNavBarContentsItem} from "@/components/subNavBarContents";
 
 export interface DevNewsDto {
-  id: number;
+  id: string;
   title: string;
   content: string;
   createdAt: string;
@@ -9,7 +9,7 @@ export interface DevNewsDto {
 
 export class DevNews {
   constructor(
-    public id: number,
+    public id: string,
     public title: string,
     public content: string,
     public createdAt: string,

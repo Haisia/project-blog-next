@@ -1,12 +1,12 @@
 import {SubNavBarContentsItem} from "@/components/subNavBarContents";
 
-export interface StudyNoteDto {
+export interface DevToolDto {
   id: string;
   title: string;
   content: string;
 }
 
-export class StudyNote {
+export class DevTool {
   constructor(
     public id: string,
     public title: string,
@@ -17,11 +17,11 @@ export class StudyNote {
     return new SubNavBarContentsItem(this.title, `${baseUrl}/${this.id.toString()}`);
   }
 
-  static fromObject(obj: StudyNoteDto): StudyNote {
-    return new StudyNote(obj.id, obj.title, obj.content);
+  static fromObject(obj: DevToolDto): DevTool {
+    return new DevTool(obj.id, obj.title, obj.content);
   }
 
-  toObject(): StudyNoteDto {
+  toObject(): DevToolDto {
     return {
       id: this.id,
       title: this.title,

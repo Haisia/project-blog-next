@@ -6,14 +6,14 @@ import {
 import {TroubleshootingCategory, TroubleshootingCategoryDto} from "@/types/troubleshooting/TroubleshootingCategory";
 
 export interface TroubleshootingDto {
-  id: number;
+  id: string;
   title: string;
   categories?: TroubleshootingCategoryDto[]
 }
 
 export class Troubleshooting implements ToSubNavBarDropDownItemAble, ToSubNavBarContentsWithSubTitleItemAble {
   constructor(
-    public id: number,
+    public id: string,
     public title: string,
     public categories: TroubleshootingCategory[] = []
   ) {}

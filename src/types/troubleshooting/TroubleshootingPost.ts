@@ -1,5 +1,5 @@
 export interface TroubleshootingPostDto {
-  id: number;
+  id: string;
   title: string;
   content: string;
   createdAt: string;
@@ -8,7 +8,7 @@ export interface TroubleshootingPostDto {
 
 export class TroubleshootingPost {
   constructor(
-    public id: number,
+    public id: string,
     public title: string,
     public content: string,
     public createdAt: string,

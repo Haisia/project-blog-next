@@ -3,14 +3,14 @@ import {SubNavBarDropDownItem, ToSubNavBarDropDownItemAble} from "@/components/s
 import {SubNavBarContentsItem, ToSubNavBarContentsItemsAble} from "@/components/subNavBarContents";
 
 export interface StudyNoteCategoryDto {
-  id: number;
+  id: string;
   title: string;
   studyNotes: StudyNoteDto[];
 }
 
 export class StudyNoteCategory implements ToSubNavBarDropDownItemAble, ToSubNavBarContentsItemsAble {
   constructor(
-    public id: number,
+    public id: string,
     public title: string,
     public studyNotes: StudyNote[]
   ) {}

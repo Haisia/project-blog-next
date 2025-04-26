@@ -14,6 +14,7 @@ const tempNavItems: NavItemProps[] = [
   {content: 'Project Log', imageSrc: '/icons/menu/projectlog.svg', link: '/projectlog'},
   {content: 'Study Note', imageSrc: '/icons/menu/studynote.svg', link: '/studynote'},
   {content: 'Troubleshooting', imageSrc: '/icons/menu/troubleshooting.svg', link: '/troubleshooting'},
+  {content: 'Dev Tool', imageSrc: '/icons/menu/devtool.svg', link: '/devtool'},
 ]
 
 const Navbar = () => {

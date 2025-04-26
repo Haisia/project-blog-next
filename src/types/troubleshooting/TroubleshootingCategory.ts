@@ -1,14 +1,14 @@
 import {TroubleshootingPost, TroubleshootingPostDto} from "@/types/troubleshooting/TroubleshootingPost";
 
 export interface TroubleshootingCategoryDto {
-  id: number;
+  id: string;
   title: string;
   posts?: TroubleshootingPostDto[]
 }
 
 export class TroubleshootingCategory {
   constructor(
-    public id: number,
+    public id: string,
     public title: string,
     public posts: TroubleshootingPost[] = []
   ) {}
