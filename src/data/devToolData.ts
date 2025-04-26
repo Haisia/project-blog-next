@@ -8,6 +8,9 @@ export const devToolCategories: DevToolCategoryDto[] = [
       {id: 'base64', title: 'Base64', content: ''},
       {id: 'unicode', title: 'Unicode',content: ''},
       {id: 'cron', title: 'Cron Expression',content: ''},
+      {id: 'url', title: 'URL Encoding', content: ''},
+      {id: 'html-entities', title: 'HTML Entities', content: ''},
+      {id: 'jwt', title: 'JWT Decoder', content: ''},
     ]
   }
 ]
