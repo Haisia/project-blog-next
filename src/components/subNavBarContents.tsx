@@ -1,7 +1,11 @@
+'use client'
+
 import Link from "next/link";
 import React from "react";
 
 const SubNavBarContents = ({items}:{items:SubNavBarContentsItem[]}) => {
+  const [selectedPost, setSelectedPost] = React.useState<string>("");
+
   return (
     <>
       <ol
@@ -9,8 +13,9 @@ const SubNavBarContents = ({items}:{items:SubNavBarContentsItem[]}) => {
         {items && items.map((item) => (
           <li key={item.title}>
             <Link
-              className={`hover:text-mypurple-100`}
+              className={`hover:text-mypurple-100 ${selectedPost === item.title ? "text-mypurple-100" : ""}`}
               href={item.link}
+              onClick={() => setSelectedPost(item.title)}
             >
               {item.title}
             </Link>
