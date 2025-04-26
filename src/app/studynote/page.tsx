@@ -1,9 +1,19 @@
 import React from 'react';
+import {BreadcrumbItem} from "@/components/breadcrumb";
+import MarkdownPost from "@/components/markdownPost";
+import {studyNoteDefaultContent} from "@/data/studyNoteData";
+
+const pageName = "Study Note"
+const pageLink = "/studynote"
 
 const Page = () => {
+  const breadcrumbItems:BreadcrumbItem[] = [
+    {content:pageName, link: pageLink},
+  ];
+
   return (
     <>
-      <h1>studynote</h1>
+      <MarkdownPost breadcrumbItems={breadcrumbItems} item={studyNoteDefaultContent}/>
     </>
   );
 }

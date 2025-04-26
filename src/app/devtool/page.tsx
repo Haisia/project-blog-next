@@ -11,10 +11,9 @@ const Page = () => {
     {content:pageName, link: pageLink},
   ];
 
-
   return (
     <>
-      {<MarkdownPost breadcrumbItems={breadcrumbItems} item={devToolDefaultContent}/>}
+      <MarkdownPost breadcrumbItems={breadcrumbItems} item={devToolDefaultContent}/>
     </>
   );
 }
