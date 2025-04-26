@@ -1,4 +1,4 @@
-import DevToolPost from "@/components/mdx/devToolPost";
+import DevToolPost from "@/components/devToolPost";
 
 const menuName = "Dev Tool";
 const menuLink = "/devtool";
