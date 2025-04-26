@@ -3,14 +3,12 @@ import {SubNavBarContentsItem} from "@/components/subNavBarContents";
 export interface DevToolDto {
   id: string;
   title: string;
-  content: string;
 }
 
 export class DevTool {
   constructor(
     public id: string,
     public title: string,
-    public content: string
   ) {}
 
   toSubNavBarContentsItem(baseUrl: string): SubNavBarContentsItem {
@@ -18,14 +16,13 @@ export class DevTool {
   }
 
   static fromObject(obj: DevToolDto): DevTool {
-    return new DevTool(obj.id, obj.title, obj.content);
+    return new DevTool(obj.id, obj.title);
   }
 
   toObject(): DevToolDto {
     return {
       id: this.id,
       title: this.title,
-      content: this.content
     };
   }
 }

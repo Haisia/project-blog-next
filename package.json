@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.16",
+    "cronstrue": "^2.59.0",
     "gray-matter": "^4.0.3",
     "next": "15.3.1",
     "next-mdx-remote": "^5.0.0",
