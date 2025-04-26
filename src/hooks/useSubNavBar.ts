@@ -27,18 +27,14 @@ export const useSubNavBar = (
         setContentItems(items[0].toSubNavBarContentsItems(baseUrl));
       }
     }
-
-    console.log("#### 1");
   }, [baseUrl, items]);
-
 
   useEffect(() => {
     const matched = items.find(item => item.toSubNavBarDropDownItem().value === selectedId);
     if (matched) {
       setContentItems(matched.toSubNavBarContentsItems(baseUrl));
     }
-    console.log('#### 2');
-  }, [baseUrl, items, selectedId]);
+  }, [selectedId]);
 
   return {
     selectedId,

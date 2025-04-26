@@ -16,17 +16,28 @@ const useSubNavBarWithSubTitle = (
   useEffect(() => {
     if (!items.length) return;
 
-    setDropDownItems(items.map(item => item.toSubNavBarDropDownItem()));
-    setSelectedId(items[0].toSubNavBarDropDownItem().value);
-    setContentItems(items[0].toSubNavBarContentsWithSubTitleItem(baseUrl));
-  }, []);
+    const dropdowns = items.map(item => item.toSubNavBarDropDownItem());
+    setDropDownItems(dropdowns);
+
+    const matched = items.find(item => item.toSubNavBarDropDownItem().value === selectedId);
+
+    if (matched) {
+      setContentItems(matched.toSubNavBarContentsWithSubTitleItem(baseUrl));
+    } else {
+      const defaultId = dropdowns[0]?.value;
+      if (defaultId) {
+        setSelectedId(defaultId);
+        setContentItems(items[0].toSubNavBarContentsWithSubTitleItem(baseUrl));
+      }
+    }
+  }, [items, baseUrl]);
 
   useEffect(() => {
     const matched = items.find(item => item.toSubNavBarDropDownItem().value === selectedId);
     if (matched) {
       setContentItems(matched.toSubNavBarContentsWithSubTitleItem(baseUrl));
     }
-  }, [selectedId, items]);
+  }, [selectedId]);
 
   return {
     selectedId,
