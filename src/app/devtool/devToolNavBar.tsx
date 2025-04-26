@@ -1,6 +1,6 @@
 import React from 'react';
 import DevToolNavBarClient from "@/app/devtool/(clients)/devToolNavBarClient";
-import {devToolCategories} from "@/data/DevToolData";
+import {devToolCategories} from "@/data/devToolData";
 
 const StudyNoteNavBar = async () => {
   const categories = devToolCategories;

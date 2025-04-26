@@ -35,7 +35,7 @@ export const fetchDevNews = async (id: number): Promise<DevNewsDto | undefined> 
 };
 
 interface BlogDevNewsResponse {
-  id: number;
+  id: string;
   contentData: {title: string, content: string};
   createdAt: string;
   updatedAt: string;

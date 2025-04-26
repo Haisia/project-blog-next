@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {learning, skilledIn} from "@/data/TechStackData";
+import {learning, skilledIn} from "@/data/techStackData";
 
 export default function Home() {
   return (

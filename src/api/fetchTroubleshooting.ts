@@ -25,15 +25,15 @@ interface FetchTroubleshootingPostResponse {
 interface FetchAllTroubleshootingPostsResponse {
   troubleshootings: [
     {
-      id: number,
+      id: string,
       title: string,
       categories?: [
         {
-          id: number,
+          id: string,
           title: string
           posts?:[
             {
-              id: number,
+              id: string,
               title: string,
               content: string,
               createdAt: string,

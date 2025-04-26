@@ -34,20 +34,20 @@ export const fetchProjectLogPost = async (id: string) => {
 }
 
 interface ProjectLogResponse {
-  id: number;
+  id: string;
   title: string;
   content: string;
   categories?: ProjectLogCategory[];
 }
 
 interface ProjectLogCategory {
-  id: number;
+  id: string;
   title: string;
   posts?: ProjectLogPost[];
 }
 
 interface ProjectLogPost {
-  id: number;
+  id: string;
   title: string;
   content: string;
   createdAt: string;
