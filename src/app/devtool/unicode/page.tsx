@@ -10,16 +10,15 @@ const breadcrumbItems = [
   { content: pageName, link: `${menuLink}${pageLink}` }
 ];
 
-const Page = async () => {
+const Page = () => {
 
   return (
     <>
       <DevToolPost
         breadcrumbItems={breadcrumbItems}
         title={pageName}
-      >
-        <div>test</div>
-      </DevToolPost>
+        content={<div>test</div>}
+      />
     </>
   );
 };

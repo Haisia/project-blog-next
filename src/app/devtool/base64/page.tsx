@@ -1,4 +1,5 @@
 import DevToolPost from "@/components/devToolPost";
+import {Base64content} from "@/app/devtool/base64/(clients)/base64content";
 
 const menuName = "Dev Tool";
 const menuLink = "/devtool";
@@ -6,19 +7,18 @@ const pageName = "Base64 Encoding & Decoding";
 const pageLink = "/base64";
 
 const breadcrumbItems = [
-  {content: menuName, link: menuLink},
-  {content: pageName, link: `${menuLink}${pageLink}`}
+  { content: menuName, link: menuLink },
+  { content: pageName, link: `${menuLink}${pageLink}` },
 ];
 
-const Page = async () => {
+const Page = () => {
   return (
     <>
       <DevToolPost
         breadcrumbItems={breadcrumbItems}
         title={pageName}
-      >
-        <div>test</div>
-      </DevToolPost>
+        content={<Base64content/>}
+      />
     </>
   );
 };
