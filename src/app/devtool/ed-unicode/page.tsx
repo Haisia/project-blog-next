@@ -1,10 +1,10 @@
 import DevToolPost from "@/components/devToolPost";
-import {HtmlEntitiesContent} from "@/app/devtool/htmlentities/(clients)/htmlEntitiesContent";
+import {UnicodeContent} from "@/app/devtool/ed-unicode/(clients)/unicodeContent";
 
 const menuName = "Dev Tool";
 const menuLink = "/devtool";
-const pageName = "HTML Entities";
-const pageLink = "/htmlentities";
+const pageName = "Unicode Encoding & Decoding";
+const pageLink = "/ed-unicode";
 
 const breadcrumbItems = [
   { content: menuName, link: menuLink },
@@ -18,7 +18,7 @@ const Page = () => {
       <DevToolPost
         breadcrumbItems={breadcrumbItems}
         title={pageName}
-        content={<HtmlEntitiesContent/>}
+        content={<UnicodeContent/>}
       />
     </>
   );

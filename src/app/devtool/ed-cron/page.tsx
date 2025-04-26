@@ -1,10 +1,10 @@
 import DevToolPost from "@/components/devToolPost";
-import {UrlContent} from "@/app/devtool/url/(clients)/urlContent";
+import CronContent from "@/app/devtool/ed-cron/(clients)/cronContent";
 
 const menuName = "Dev Tool";
 const menuLink = "/devtool";
-const pageName = "URL Encoding & Decoding";
-const pageLink = "/url";
+const pageName = "Cron Expression";
+const pageLink = "/ed-cron";
 
 const breadcrumbItems = [
   { content: menuName, link: menuLink },
@@ -18,7 +18,7 @@ const Page = () => {
       <DevToolPost
         breadcrumbItems={breadcrumbItems}
         title={pageName}
-        content={<UrlContent/>}
+        content={<CronContent/>}
       />
     </>
   );

@@ -1,23 +1,24 @@
 import DevToolPost from "@/components/devToolPost";
-import {Base64content} from "@/app/devtool/base64/(clients)/base64content";
+import {HtmlEntitiesContent} from "@/app/devtool/ed-htmlentities/(clients)/htmlEntitiesContent";
 
 const menuName = "Dev Tool";
 const menuLink = "/devtool";
-const pageName = "Base64 Encoding & Decoding";
-const pageLink = "/base64";
+const pageName = "HTML Entities";
+const pageLink = "/ed-htmlentities";
 
 const breadcrumbItems = [
   { content: menuName, link: menuLink },
-  { content: pageName, link: `${menuLink}${pageLink}` },
+  { content: pageName, link: `${menuLink}${pageLink}` }
 ];
 
 const Page = () => {
+
   return (
     <>
       <DevToolPost
         breadcrumbItems={breadcrumbItems}
         title={pageName}
-        content={<Base64content/>}
+        content={<HtmlEntitiesContent/>}
       />
     </>
   );
