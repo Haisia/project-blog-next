@@ -1,6 +1,7 @@
 import { fetchProjectLog } from '@/api/fetchProjectLog';
 import MarkdownPost from '@/components/markdownPost';
 import {BreadcrumbItem} from "@/components/breadcrumb";
+import {projectLogDefaultContent} from "@/data/projectLogData";
 
 const pageName = "Project Log"
 const pageLink = "/projectlog"
@@ -11,15 +12,12 @@ interface Props {
 
 const Page = async ({ searchParams }: Props) => {
   const params = await searchParams;
-  const projectId = typeof params.projectId === 'string'
-    ? params.projectId
-    : params.projectId?.[0] ?? '1';
+  const projectId = typeof params.projectId === 'string' ? params.projectId : '';
 
-  const project = await fetchProjectLog(projectId);
+  const project = projectId ? await fetchProjectLog(projectId) : projectLogDefaultContent;
 
   const breadcrumbItems:BreadcrumbItem[] = [
     {content:pageName, link: pageLink},
-    {content:project.title, link: '#'},
   ];
 
   return (
