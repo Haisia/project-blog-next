@@ -35,7 +35,7 @@
 
     h1 { @apply text-4xl font-bold; }
     h2 { @apply text-3xl font-semibold; }
-    h3 { @apply text-2xl font-medium text-mypurple-200; }
+    h3 { @apply text-2xl font-medium; }
     p { @apply text-base leading-relaxed text-gray-300; }
     strong { @apply font-bold text-gray-100; }
     a { @apply text-mypurple-200 hover:text-mypurple-400 underline-offset-4; }
