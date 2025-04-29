@@ -28,7 +28,7 @@ export const fetchAllProjectLog = async (): Promise<ProjectLogResponse[]> => {
 
   const response: ResponseData<{ projects: ProjectLogResponse[] }> = await fetchResult.json();
 
-  return response.data.projects;
+  return response.data?.projects;
 };
 
 export const fetchProjectLog = async (id: string) => {
@@ -50,38 +50,53 @@ export const fetchProjectLog = async (id: string) => {
 };
 
 export const fetchProjectLogPost = async (id: string) => {
-  const fetchResult = await fetch(`${baseUrl}/${id}`, { next: { revalidate: 30 } });
+  try {
+    const fetchResult = await fetch(`${baseUrl}/${id}`, { next: { revalidate: 30 } });
 
-  const response: ResponseData<{
-    postId: string;
-    postTitle: string;
-    postContent: string;
-    createdAt: string;
-    updatedAt: string;
-    projectId: string;
-    projectTitle: string;
-    projectContent: string;
-  }> = await fetchResult.json();
+    if (!fetchResult.ok) {
+      console.error(`fetchProjectLogPost failed: ${fetchResult.status} ${fetchResult.statusText}`);
+      return null;
+    }
 
-  const {
-    postId,
-    postTitle,
-    postContent,
-    createdAt,
-    updatedAt,
-    projectId,
-    projectTitle,
-    projectContent,
-  } = response.data;
+    const response: ResponseData<{
+      postId: string;
+      postTitle: string;
+      postContent: string;
+      createdAt: string;
+      updatedAt: string;
+      projectId: string;
+      projectTitle: string;
+      projectContent: string;
+    }> = await fetchResult.json();
 
-  return {
-    id: postId,
-    title: postTitle,
-    content: postContent,
-    createdAt,
-    updatedAt,
-    projectId,
-    projectTitle,
-    projectContent,
-  };
+    if (!response.data) {
+      console.error(`fetchProjectLogPost: response.data is null`);
+      return null;
+    }
+
+    const {
+      postId,
+      postTitle,
+      postContent,
+      createdAt,
+      updatedAt,
+      projectId,
+      projectTitle,
+      projectContent,
+    } = response.data;
+
+    return {
+      id: postId,
+      title: postTitle,
+      content: postContent,
+      createdAt,
+      updatedAt,
+      projectId,
+      projectTitle,
+      projectContent,
+    };
+  } catch (error) {
+    console.error('fetchProjectLogPost error:', error);
+    return null;
+  }
 };

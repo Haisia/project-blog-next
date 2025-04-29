@@ -32,17 +32,38 @@ export const fetchAllDevNews = async (): Promise<DevNewsDto[]> => {
 };
 
 export const fetchDevNews = async (id: number): Promise<DevNewsDto | undefined> => {
-  const fetchResult = await fetch(`${baseUrl}/${id}`, { next: { revalidate: 30 } });
-  const response: ResponseData<{ blogDevNewses: DevNewsDto[] }> = await fetchResult.json();
-  const { blogDevNewses } = response.data;
-  console.log(blogDevNewses)
+  try {
+    const fetchResult = await fetch(`${baseUrl}/${id}`, { next: { revalidate: 30 } });
 
-  const devNews = blogDevNewses[0];
+    if (!fetchResult.ok) {
+      console.error(`fetchDevNews failed: ${fetchResult.status} ${fetchResult.statusText}`);
+      return undefined;
+    }
 
-  return {
-    id: devNews.id,
-    title: devNews.title,
-    content: devNews.content,
-    createdAt: devNews.createdAt,
-  };
+    const response: ResponseData<{ blogDevNewses: DevNewsDto[] }> = await fetchResult.json();
+
+    if (!response.data) {
+      console.error(`fetchDevNews: response.data is null`);
+      return undefined;
+    }
+
+    const { blogDevNewses } = response.data;
+
+    if (!blogDevNewses || blogDevNewses.length === 0) {
+      console.error(`fetchDevNews: blogDevNewses is empty`);
+      return undefined;
+    }
+
+    const devNews = blogDevNewses[0];
+
+    return {
+      id: devNews.id,
+      title: devNews.title,
+      content: devNews.content,
+      createdAt: devNews.createdAt,
+    };
+  } catch (error) {
+    console.error('fetchDevNews error:', error);
+    return undefined;
+  }
 };

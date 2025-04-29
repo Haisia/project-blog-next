@@ -2,6 +2,7 @@ import React from 'react';
 import {fetchProjectLogPost} from "@/api/fetchProjectLog";
 import MarkdownPost from "@/components/markdownPost";
 import {staticParamsGenerator} from "@/utils/staticParamsGenerator";
+import {notFound} from "next/navigation";
 
 const pageName = "Project Log"
 const pageLink = "/projectlog"
@@ -15,6 +16,10 @@ const Page = async (
 ) => {
   const { id } = await params
   const post = await fetchProjectLogPost(id.toString())
+
+  if (!post) {
+    notFound();
+  }
 
   const breadcrumbItems = [
     {content: pageName, link: pageLink},

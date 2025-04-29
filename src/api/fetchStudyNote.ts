@@ -6,7 +6,7 @@ const baseUrl = `${process.env.NEXT_PUBLIC_BE_HOST}/api/blog/studynote`;
 export const fetchAllStudyNotes = async (): Promise<StudyNoteCategoryDto[]> => {
   const fetchResult = await fetch(`${baseUrl}/all`, { next: { revalidate: 30 } });
   const response: ResponseData<{ categories: StudyNoteCategoryDto[] }> = await fetchResult.json();
-  return response.data.categories;
+  return response.data?.categories;
 };
 
 export const fetchStudyNote = async (_id: number): Promise<StudyNoteCategoryDto> => {
