@@ -1,18 +1,18 @@
-import {StudyNote, StudyNoteDto} from "@/types/studynote/StudyNote";
+import {StudyNotePost, StudyNotePostDto} from "@/types/studynote/StudyNotePost";
 import {SubNavBarDropDownItem, ToSubNavBarDropDownItemAble} from "@/components/subNavBarDropDown";
 import {SubNavBarContentsItem, ToSubNavBarContentsItemsAble} from "@/components/subNavBarContents";
 
 export interface StudyNoteCategoryDto {
   id: string;
   title: string;
-  studyNotes: StudyNoteDto[];
+  posts: StudyNotePostDto[];
 }
 
 export class StudyNoteCategory implements ToSubNavBarDropDownItemAble, ToSubNavBarContentsItemsAble {
   constructor(
     public id: string,
     public title: string,
-    public studyNotes: StudyNote[]
+    public posts: StudyNotePost[]
   ) {}
 
   toSubNavBarDropDownItem(): SubNavBarDropDownItem {
@@ -20,14 +20,14 @@ export class StudyNoteCategory implements ToSubNavBarDropDownItemAble, ToSubNavB
   }
 
   toSubNavBarContentsItems(baseUrl: string): SubNavBarContentsItem[] {
-    return this.studyNotes.map(studyNote => studyNote.toSubNavBarContentsItem(baseUrl));
+    return this.posts.map(studyNote => studyNote.toSubNavBarContentsItem(baseUrl));
   }
 
   static fromObject(obj: StudyNoteCategoryDto): StudyNoteCategory {
     return new StudyNoteCategory(
       obj.id,
       obj.title,
-      obj.studyNotes.map(note => StudyNote.fromObject(note))
+      obj.posts.map(note => StudyNotePost.fromObject(note))
     );
   }
 
@@ -35,7 +35,7 @@ export class StudyNoteCategory implements ToSubNavBarDropDownItemAble, ToSubNavB
     return {
       id: this.id,
       title: this.title,
-      studyNotes: this.studyNotes.map(note => note.toObject())
+      posts: this.posts.map(note => note.toObject())
     };
   }
 }

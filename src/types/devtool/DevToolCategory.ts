@@ -1,4 +1,4 @@
-import {StudyNote} from "@/types/studynote/StudyNote";
+import {StudyNotePost} from "@/types/studynote/StudyNotePost";
 import {SubNavBarDropDownItem, ToSubNavBarDropDownItemAble} from "@/components/subNavBarDropDown";
 import {SubNavBarContentsItem, ToSubNavBarContentsItemsAble} from "@/components/subNavBarContents";
 import {DevTool, DevToolDto} from "@/types/devtool/DevTool";
@@ -28,7 +28,7 @@ export class DevToolCategory implements ToSubNavBarDropDownItemAble, ToSubNavBar
     return new DevToolCategory(
       obj.id,
       obj.title,
-      obj.devTools.map(note => StudyNote.fromObject(note))
+      obj.devTools.map(note => StudyNotePost.fromObject(note))
     );
   }
 

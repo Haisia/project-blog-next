@@ -25,7 +25,7 @@ export const fetchStudyNote = async (_id: number): Promise<StudyNoteCategoryDto>
   return {
     id: categoryId,
     title: categoryTitle,
-    studyNotes: [
+    posts: [
       {
         id,
         title,
