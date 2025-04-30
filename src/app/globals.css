@@ -46,6 +46,7 @@
     ol { @apply list-decimal pl-5; }
     table { @apply text-white; }
     th { @apply text-white; }
+    tr td { @apply text-gray-300;}
     li {@apply relative flex items-start pl-5 text-white marker:bg-mypurple-100 items-center;}
 
     li::before {

@@ -21,7 +21,6 @@ export const fetchAllDevNews = async (): Promise<DevNewsDto[]> => {
   const response: ResponseData<{ blogDevNewses: DevNewsDto[] }> = await fetchResult.json();
 
   const { blogDevNewses } = response.data;
-  console.log(blogDevNewses)
 
   return blogDevNewses.map((devNews) => ({
     id: devNews.id,
