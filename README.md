@@ -39,7 +39,6 @@
 - **Frontend**: <img src="./public/icons/tech-stack/typescript.svg" width="16" height="16"/>TypeScript, <img src="./public/icons/tech-stack/nextjs.svg" width="16" height="16"/>Next.js (App Router)
 - **Styling**: <img src="./public/icons/tech-stack/tailwind.svg" width="16" height="16"/>TailwindCSS
 - **Infrastructure**:<img src="./public/icons/tech-stack/cloudflare.svg" width="16" height="16"/>Cloudflare,<img src="./public/icons/tech-stack/vercel.svg" width="16" height="16"/>Vercel,<img src="./public/icons/tech-stack/oracle.svg" width="16" height="16"/>Oracle Cloud,<img src="./public/icons/tech-stack/github.svg" width="16" height="16"/>GitHub Actions
-- **Search**:<img src="./public/icons/tech-stack/elasticsearch.svg" width="16" height="16"/>ELK Stack (Elasticsearch, Logstash, Kibana)
 
 ---  
 
