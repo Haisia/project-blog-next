@@ -19,6 +19,7 @@ export const learning: TechStackProps[] = [
   {content: 'Prometheus', src: `${techStackIconBaseUrl}prometheus.svg`},
   {content: 'Grafana', src: `${techStackIconBaseUrl}grafana.svg`},
   {content: 'ELK Stack', src: `${techStackIconBaseUrl}elasticsearch.svg`},
+  {content: 'RabbitMQ', src: `${techStackIconBaseUrl}rabbitMQ.svg`},
   {content: 'PostgreSQL', src: `${techStackIconBaseUrl}postgresql.svg`},
   {content: 'MongoDB', src: `${techStackIconBaseUrl}mongodb.svg`},
   {content: 'Typescript', src: `${techStackIconBaseUrl}typescript.svg`},
