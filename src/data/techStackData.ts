@@ -10,15 +10,16 @@ export const skilledIn: TechStackProps[] = [
   {content: 'JavaScript', src: `${techStackIconBaseUrl}javascript.svg`},
   {content: 'MySQL', src: `${techStackIconBaseUrl}mysql.svg`},
   {content: 'Junit', src: `${techStackIconBaseUrl}junit.svg`},
+  {content: 'React', src: `${techStackIconBaseUrl}reactjs.svg`},
+  {content: 'Next.js', src: `${techStackIconBaseUrl}nextjs.svg`},
+  {content: 'TailwindCSS', src: `${techStackIconBaseUrl}tailwind.svg`},
 ]
 
 export const learning: TechStackProps[] = [
-  {content: 'RabbitMQ', src: `${techStackIconBaseUrl}rabbitMQ.svg`},
+  {content: 'Prometheus', src: `${techStackIconBaseUrl}prometheus.svg`},
+  {content: 'Grafana', src: `${techStackIconBaseUrl}grafana.svg`},
   {content: 'ELK Stack', src: `${techStackIconBaseUrl}elasticsearch.svg`},
   {content: 'PostgreSQL', src: `${techStackIconBaseUrl}postgresql.svg`},
   {content: 'MongoDB', src: `${techStackIconBaseUrl}mongodb.svg`},
-  {content: 'React', src: `${techStackIconBaseUrl}reactjs.svg`},
-  {content: 'Next.js', src: `${techStackIconBaseUrl}nextjs.svg`},
   {content: 'Typescript', src: `${techStackIconBaseUrl}typescript.svg`},
-  {content: 'TailwindCSS', src: `${techStackIconBaseUrl}tailwind.svg`},
 ]
