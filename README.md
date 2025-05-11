@@ -34,11 +34,11 @@
 
 ## 5. 기술 스택
 
-- **Backend**:<img src="./public/icons/tech-stack/java.svg" width="16" height="16"/>Java,<img src="./public/icons/tech-stack/spring.svg" width="16" height="16"/>Spring Boot,<img src="./public/icons/tech-stack/spring-data.svg" width="16" height="16"/>JPA,<img src="./public/icons/tech-stack/junit.svg" width="16" height="16"/>Junit5
-- **Database**:<img src="./public/icons/tech-stack/oracle.svg" width="16" height="16"/>Oracle Cloud Database
-- **Frontend**: <img src="./public/icons/tech-stack/typescript.svg" width="16" height="16"/>TypeScript, <img src="./public/icons/tech-stack/nextjs.svg" width="16" height="16"/>Next.js (App Router)
-- **Styling**: <img src="./public/icons/tech-stack/tailwind.svg" width="16" height="16"/>TailwindCSS
-- **Infrastructure**:<img src="./public/icons/tech-stack/cloudflare.svg" width="16" height="16"/>Cloudflare,<img src="./public/icons/tech-stack/vercel.svg" width="16" height="16"/>Vercel,<img src="./public/icons/tech-stack/oracle.svg" width="16" height="16"/>Oracle Cloud,<img src="./public/icons/tech-stack/github.svg" width="16" height="16"/>GitHub Actions
+- **Backend**:<img src="https://haisia.dev/icons/tech-stack/java.svg" width="16" height="16"/>Java,<img src="https://haisia.dev/icons/tech-stack/spring.svg" width="16" height="16"/>Spring Boot,<img src="https://haisia.dev/icons/tech-stack/spring-data.svg" width="16" height="16"/>JPA,<img src="https://haisia.dev/icons/tech-stack/junit.svg" width="16" height="16"/>Junit5
+- **Database**:<img src="https://haisia.dev/icons/tech-stack/oracle.svg" width="16" height="16"/>Oracle Cloud Database
+- **Frontend**: <img src="https://haisia.dev/icons/tech-stack/typescript.svg" width="16" height="16"/>TypeScript, <img src="https://haisia.dev/icons/tech-stack/nextjs.svg" width="16" height="16"/>Next.js (App Router)
+- **Styling**: <img src="https://haisia.dev/icons/tech-stack/tailwind.svg" width="16" height="16"/>TailwindCSS
+- **Infrastructure**:<img src="https://haisia.dev/icons/tech-stack/cloudflare.svg" width="16" height="16"/>Cloudflare,<img src="https://haisia.dev/icons/tech-stack/vercel.svg" width="16" height="16"/>Vercel,<img src="https://haisia.dev/icons/tech-stack/oracle.svg" width="16" height="16"/>Oracle Cloud,<img src="https://haisia.dev/icons/tech-stack/github.svg" width="16" height="16"/>GitHub Actions
 
 ---  
 
@@ -56,7 +56,7 @@
 
 ---  
 ## 8. 시스템 흐름도
-<img src="./public/projectlog/blog/intro/systemflow.png"/>
+<img src="https://haisia.dev/projectlog/blog/intro/systemflow.png"/>
 
 ---  
 ## 9. 프로젝트 회고
