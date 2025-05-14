@@ -5,6 +5,7 @@ import Header from "@/app/header";
 import Footer from "@/app/footer";
 import Navbar from "@/app/navigation";
 import ScrollTop from "@/app/(clients)/scrollTop";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "Haisia\`s blog",
@@ -23,6 +24,7 @@ export default function RootLayout(
   return (
     <html lang="en">
       <body className="bg-myblack text-white">
+        <Analytics />
         <Header/>
         <div className="flex items-stretch min-h-[500px]">
           <Navbar/>
