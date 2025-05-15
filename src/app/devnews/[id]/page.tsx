@@ -7,9 +7,9 @@ import {staticParamsGenerator} from "@/utils/staticParamsGenerator";
 const pageName = "Dev News";
 const pageLink = "/devnews";
 
-export function generateStaticParams() {
-  return staticParamsGenerator(50);
-}
+// export function generateStaticParams() {
+//   return staticParamsGenerator(50);
+// }
 
 const Page = async (
   { params }: Readonly<{ params: Promise<{ id: number }> }>

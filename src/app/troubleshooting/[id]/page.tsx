@@ -7,9 +7,9 @@ import {fetchTroubleshootingPost} from "@/api/fetchTroubleshooting";
 const pageName = "Troubleshooting"
 const pageLink = "/troubleshooting"
 
-export function generateStaticParams() {
-  return staticParamsGenerator(50);
-}
+// export function generateStaticParams() {
+//   return staticParamsGenerator(50);
+// }
 
 const Page = async (
   { params }: Readonly<{ params: Promise<{ id: number }> }>
